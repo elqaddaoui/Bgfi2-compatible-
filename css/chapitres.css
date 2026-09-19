@@ -1,0 +1,702 @@
+/* ============================================================
+   BGFI LISOLO · CHAPITRE DIVIDERS
+   Eight editorial title pages — one per chapitre of the plan.
+
+   Design intent
+   -------------
+   The dividers are not eight random backgrounds: they form a
+   deliberate rhythm through the magazine, alternating paper and
+   navy so the reader physically feels a page turn each time a
+   chapter opens.
+
+        I   parchment    · paper      · the letterpress overture
+        II  data         · navy       · the ledger, ruled and lit
+        III editorial    · paper      · the wide-format reportage
+        IV  circuit      · navy       · the blueprint of innovation
+        V   bloom        · paper      · the warm, organic commitment
+        VI  beam         · navy       · the spotlight on our people
+        VII ascend       · paper      · the ascending staircase
+        VIII celebration · paper/gold · the confetti finale
+
+   All eight share one skeleton (kicker → numeral + title →
+   rule → chapter contents), so the structure stays coherent
+   while each atmosphere carries its own meaning.
+   ============================================================ */
+
+.chapitre-divider {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(86px, 11vw, 168px) 0 clamp(76px, 9vw, 140px);
+  --cd-ink: var(--bgfi-blue-deep);
+  --cd-ink-soft: #4a5a52;
+  --cd-accent: var(--bgfi-sage-ink);
+  --cd-hair: rgba(0, 31, 77, .14);
+  --cd-numeral: rgba(0, 31, 77, .1);
+  --cd-chip: rgba(255, 255, 255, .62);
+  --cd-chip-line: rgba(0, 31, 77, .1);
+}
+
+/* ---------- Shared atmosphere layers ---------- */
+.cd-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.cd-canvas > * {
+  position: absolute;
+  display: block;
+}
+.cd-wash,
+.cd-mesh,
+.cd-grain,
+.cd-figure {
+  inset: 0;
+}
+.cd-grain {
+  opacity: .5;
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 31, 77, .16) 1px, transparent 0);
+  background-size: 4px 4px;
+  mix-blend-mode: multiply;
+}
+
+/* Ghost numeral — the oversized watermark of the chapter number */
+.cd-numeral-ghost {
+  inset: auto -2.5% -14% auto;
+  right: -2.5%;
+  bottom: -16%;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(200px, 34vw, 460px);
+  line-height: .74;
+  letter-spacing: -.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--cd-numeral);
+  text-stroke: 1px var(--cd-numeral);
+  user-select: none;
+}
+
+/* Drifting sage sparks */
+.cd-spark {
+  width: 14px;
+  height: 14px;
+  background: var(--bgfi-gold);
+  opacity: .3;
+  clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+  animation: cd-drift 16s ease-in-out infinite;
+}
+.cd-spark--a { top: 14%;  left: 7%;  width: 26px; height: 26px; animation-duration: 19s; }
+.cd-spark--b { top: 68%;  left: 18%; width: 12px; height: 12px; animation-delay: -6s; }
+.cd-spark--c { top: 26%;  right: 12%; width: 18px; height: 18px; animation-delay: -11s; animation-duration: 22s; }
+
+@keyframes cd-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%      { transform: translate3d(0, -26px, 0) rotate(180deg); }
+}
+
+/* ============================================================
+   Skeleton — identical across the eight chapters
+   ============================================================ */
+.cd-inner { position: relative; z-index: 2; }
+
+.cd-kicker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 clamp(26px, 4vw, 44px);
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--cd-accent);
+}
+.cd-kicker .bgfi-star { flex: none; animation: bgfi-star-spin 26s linear infinite; }
+.cd-kicker-text { flex: none; }
+.cd-kicker-rule {
+  flex: 1 1 auto;
+  height: 1px;
+  min-width: 30px;
+  background: linear-gradient(90deg, var(--cd-hair), transparent);
+}
+.cd-kicker-count {
+  flex: none;
+  font-family: var(--font-display);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  color: var(--cd-ink-soft);
+  opacity: .8;
+}
+
+.cd-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(24px, 4vw, 56px);
+}
+
+.cd-numeral {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(56px, 9vw, 132px);
+  line-height: .82;
+  letter-spacing: -.02em;
+  color: var(--cd-accent);
+  opacity: .9;
+  background: linear-gradient(160deg, var(--bgfi-gold-deep), var(--bgfi-gold) 55%, var(--bgfi-champagne));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cd-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 1.3rem + 3.3vw, 4.4rem);
+  line-height: 1.03;
+  letter-spacing: -.022em;
+  color: var(--cd-ink);
+  text-wrap: balance;
+}
+.cd-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--cd-accent);
+}
+
+.cd-standfirst {
+  margin: clamp(18px, 2.4vw, 28px) 0 0;
+  max-width: 62ch;
+  font-family: var(--font-editorial);
+  font-size: clamp(1.06rem, .98rem + .45vw, 1.42rem);
+  line-height: 1.55;
+  color: var(--cd-ink-soft);
+}
+
+.cd-rule {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: clamp(34px, 5vw, 60px) 0 clamp(28px, 4vw, 44px);
+}
+.cd-rule-line {
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cd-hair) 18%, var(--cd-hair) 82%, transparent);
+}
+.cd-rule .bgfi-star {
+  flex: none;
+  animation: bgfi-star-breathe 5s ease-in-out infinite;
+}
+
+/* ---------- Chapter contents ---------- */
+.cd-foot {
+  display: grid;
+  gap: clamp(22px, 3vw, 34px);
+}
+.cd-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  gap: 10px;
+  align-items: start;
+}
+.cd-item { margin: 0; }
+
+/* Chip: star in a fixed gutter, label and date stacked so long
+   French datelines ("Du 22 mars au 4 avril 2026") never collide. */
+.cd-item > a {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr);
+  align-items: start;
+  column-gap: 12px;
+  row-gap: 5px;
+  padding: 13px 16px 14px;
+  height: 100%;
+  border: 1px solid var(--cd-chip-line);
+  border-radius: 4px;
+  background: var(--cd-chip);
+  text-decoration: none;
+  transition: border-color .45s var(--ease, ease), background .45s ease, transform .45s var(--ease-lux, ease);
+}
+.cd-item > a:hover,
+.cd-item > a:focus-visible {
+  border-color: var(--bgfi-gold);
+  transform: translateX(4px);
+  outline: none;
+}
+.cd-item-star {
+  grid-column: 1;
+  grid-row: 1;
+  width: 10px;
+  height: 10px;
+  margin-top: .42em;
+  opacity: .75;
+  transition: transform .5s var(--ease-lux, ease);
+}
+.cd-item > a:hover .cd-item-star { transform: rotate(90deg) scale(1.25); }
+.cd-item-text {
+  grid-column: 2;
+  grid-row: 1;
+  font-family: var(--font-body);
+  font-size: .92rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--cd-ink);
+  text-wrap: pretty;
+}
+.cd-item-date {
+  grid-column: 2;
+  grid-row: 2;
+  font-family: var(--font-body);
+  font-size: .655rem;
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--cd-accent);
+  opacity: .9;
+}
+
+/* ---------- Pictogram variant (chapitre VIII) ----------
+   The chapter plan asks for a pictogram on each of the two
+   items: the chip grows into a card and carries a line icon
+   instead of the sage star. */
+.cd-list--picto {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  max-width: 860px;
+}
+.cd-list--picto .cd-item > a {
+  grid-template-columns: 56px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 20px;
+  padding: 22px 26px;
+}
+.cd-picto {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  color: var(--cd-accent);
+  transition: transform .6s var(--ease-lux, ease);
+}
+.cd-picto svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+.cd-list--picto .cd-item > a:hover .cd-picto { transform: scale(1.08) rotate(-4deg); }
+.cd-list--picto .cd-item-text { font-size: 1rem; font-weight: 600; }
+.cd-list--picto .cd-item-date { letter-spacing: .18em; }
+
+.cd-dateline {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--cd-ink-soft);
+  opacity: .78;
+}
+
+/* ============================================================
+   Dark variants — shared token overrides
+   ============================================================ */
+.chapitre-divider--data,
+.chapitre-divider--circuit,
+.chapitre-divider--beam {
+  --cd-ink: var(--bgfi-ivory);
+  --cd-ink-soft: rgba(238, 244, 236, .74);
+  --cd-accent: var(--bgfi-gold-glow);
+  --cd-hair: rgba(217, 228, 210, .26);
+  --cd-numeral: rgba(217, 228, 210, .17);
+  --cd-chip: rgba(255, 255, 255, .05);
+  --cd-chip-line: rgba(217, 228, 210, .2);
+}
+.chapitre-divider--data .cd-grain,
+.chapitre-divider--circuit .cd-grain,
+.chapitre-divider--beam .cd-grain {
+  mix-blend-mode: screen;
+  opacity: .28;
+  background-image: radial-gradient(circle at 1px 1px, rgba(217, 228, 210, .3) 1px, transparent 0);
+}
+.chapitre-divider--data .cd-numeral,
+.chapitre-divider--circuit .cd-numeral,
+.chapitre-divider--beam .cd-numeral {
+  background: linear-gradient(160deg, var(--bgfi-gold-glow), var(--bgfi-gold) 60%, var(--bgfi-champagne));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.chapitre-divider--data .cd-item > a:hover,
+.chapitre-divider--circuit .cd-item > a:hover,
+.chapitre-divider--beam .cd-item > a:hover {
+  background: rgba(217, 228, 210, .12);
+}
+
+/* ============================================================
+   I · PARCHMENT — the letterpress overture (paper)
+   Fine horizontal rules, like a page proof before the édito.
+   ============================================================ */
+.chapitre-divider--parchment .cd-wash {
+  background:
+    radial-gradient(ellipse 70% 50% at 12% 0%, rgba(214, 229, 180, .34), transparent 64%),
+    radial-gradient(ellipse 60% 46% at 92% 100%, rgba(0, 59, 122, .08), transparent 62%),
+    linear-gradient(180deg, #fdfefb 0%, #f6faf2 54%, #fcfefb 100%);
+}
+.chapitre-divider--parchment .cd-mesh {
+  opacity: .5;
+  background-image: repeating-linear-gradient(180deg, rgba(0, 31, 77, .055) 0 1px, transparent 1px 9px);
+  mask-image: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent);
+}
+.chapitre-divider--parchment .cd-figure {
+  inset: auto auto 0 0;
+  left: -6%;
+  bottom: -30%;
+  width: 46vw;
+  height: 46vw;
+  max-width: 620px;
+  max-height: 620px;
+  border-radius: 50%;
+  border: 1px solid rgba(157, 180, 154, .3);
+  box-shadow:
+    inset 0 0 0 22px rgba(157, 180, 154, .06),
+    0 0 0 1px rgba(157, 180, 154, .12);
+}
+
+/* ============================================================
+   II · DATA — the ruled, lit ledger (navy)
+   A graph grid with a rising sage glow behind the indicators.
+   ============================================================ */
+.chapitre-divider--data .cd-wash {
+  background:
+    radial-gradient(ellipse 62% 52% at 8% 4%, rgba(157, 180, 154, .26), transparent 60%),
+    radial-gradient(ellipse 58% 48% at 94% 96%, rgba(26, 75, 143, .6), transparent 62%),
+    linear-gradient(180deg, #000d24 0%, #001f4d 46%, #003b7a 100%);
+}
+.chapitre-divider--data .cd-mesh {
+  opacity: .5;
+  background-image:
+    linear-gradient(rgba(217, 228, 210, .085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 228, 210, .085) 1px, transparent 1px);
+  background-size: 62px 62px, 62px 62px;
+  mask-image: radial-gradient(ellipse 90% 80% at 30% 40%, #000 20%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 30% 40%, #000 20%, transparent 78%);
+}
+/* Ascending bars — the performance read as architecture */
+.chapitre-divider--data .cd-figure {
+  inset: auto 4% 0 auto;
+  right: 4%;
+  bottom: 0;
+  width: min(420px, 42vw);
+  height: 64%;
+  background-image:
+    linear-gradient(180deg, rgba(217, 228, 210, .22), transparent),
+    linear-gradient(180deg, rgba(157, 180, 154, .3), transparent),
+    linear-gradient(180deg, rgba(217, 228, 210, .16), transparent);
+  background-repeat: no-repeat;
+  background-size: 16% 46%, 16% 74%, 16% 100%;
+  background-position: 12% 100%, 44% 100%, 76% 100%;
+  opacity: .85;
+}
+
+/* ============================================================
+   III · EDITORIAL — the wide-format reportage (paper)
+   Diagonal editorial bands: the busiest chapter, given air.
+   ============================================================ */
+.chapitre-divider--editorial .cd-wash {
+  background:
+    radial-gradient(ellipse 64% 46% at 88% 4%, rgba(157, 180, 154, .26), transparent 62%),
+    radial-gradient(ellipse 56% 42% at 6% 96%, rgba(0, 59, 122, .1), transparent 62%),
+    linear-gradient(180deg, #fcfefb 0%, #eff6ec 58%, #fafdf8 100%);
+}
+.chapitre-divider--editorial .cd-mesh {
+  opacity: .8;
+  background-image: repeating-linear-gradient(
+    118deg,
+    rgba(157, 180, 154, .14) 0 2px,
+    transparent 2px 26px);
+  mask-image: linear-gradient(112deg, #000, transparent 62%);
+  -webkit-mask-image: linear-gradient(112deg, #000, transparent 62%);
+}
+.chapitre-divider--editorial .cd-figure {
+  inset: 0 0 0 auto;
+  right: 0;
+  width: 34%;
+  background: linear-gradient(200deg, rgba(0, 31, 77, .07), rgba(157, 180, 154, .12));
+  clip-path: polygon(26% 0, 100% 0, 100% 100%, 0 100%);
+  opacity: .75;
+}
+
+/* ============================================================
+   IV · CIRCUIT — the blueprint of innovation (navy)
+   Nodes and traces: the digital chapter drawn as a board.
+   ============================================================ */
+.chapitre-divider--circuit .cd-wash {
+  background:
+    radial-gradient(ellipse 58% 50% at 92% 6%, rgba(157, 180, 154, .24), transparent 58%),
+    radial-gradient(ellipse 62% 52% at 6% 94%, rgba(26, 75, 143, .55), transparent 62%),
+    linear-gradient(160deg, #001229 0%, #00234f 52%, #003162 100%);
+}
+.chapitre-divider--circuit .cd-mesh {
+  opacity: .55;
+  background-image:
+    linear-gradient(90deg, rgba(217, 228, 210, .1) 1px, transparent 1px),
+    linear-gradient(rgba(217, 228, 210, .06) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(217, 228, 210, .5) 1.6px, transparent 2px);
+  background-size: 46px 46px, 46px 46px, 138px 138px;
+  mask-image: linear-gradient(122deg, #000 8%, transparent 72%);
+  -webkit-mask-image: linear-gradient(122deg, #000 8%, transparent 72%);
+}
+.chapitre-divider--circuit .cd-figure {
+  inset: auto -8% -22% auto;
+  right: -8%;
+  bottom: -22%;
+  width: min(560px, 52vw);
+  height: min(560px, 52vw);
+  border-radius: 50%;
+  border: 1px solid rgba(217, 228, 210, .2);
+  box-shadow:
+    inset 0 0 0 40px rgba(217, 228, 210, .045),
+    inset 0 0 0 41px rgba(217, 228, 210, .14),
+    inset 0 0 0 92px rgba(157, 180, 154, .05);
+  animation: cd-rotate 64s linear infinite;
+}
+@keyframes cd-rotate {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   V · BLOOM — the warm, organic commitment (paper)
+   Concentric sage blooms: engagement that radiates outward.
+   ============================================================ */
+.chapitre-divider--bloom .cd-wash {
+  background:
+    radial-gradient(circle at 22% 22%, rgba(157, 180, 154, .3), transparent 46%),
+    radial-gradient(circle at 80% 80%, rgba(214, 229, 180, .3), transparent 48%),
+    linear-gradient(135deg, #fcfefb 0%, #f1f7ec 52%, #fbfdf8 100%);
+}
+.chapitre-divider--bloom .cd-mesh {
+  opacity: .6;
+  background-image: repeating-radial-gradient(
+    circle at 18% 30%,
+    rgba(157, 180, 154, .16) 0 1px,
+    transparent 1px 42px);
+  mask-image: radial-gradient(circle at 18% 30%, #000, transparent 72%);
+  -webkit-mask-image: radial-gradient(circle at 18% 30%, #000, transparent 72%);
+}
+.chapitre-divider--bloom .cd-figure {
+  inset: auto 6% -18% auto;
+  right: 6%;
+  bottom: -18%;
+  width: min(400px, 40vw);
+  height: min(400px, 40vw);
+  border-radius: 46% 54% 52% 48% / 48% 46% 54% 52%;
+  background: linear-gradient(150deg, rgba(157, 180, 154, .2), rgba(214, 229, 180, .06));
+  border: 1px solid rgba(157, 180, 154, .26);
+  animation: cd-breathe 14s ease-in-out infinite;
+}
+@keyframes cd-breathe {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50%      { transform: scale(1.06) rotate(8deg); }
+}
+
+/* ============================================================
+   VI · BEAM — the spotlight on our people (navy)
+   A single shaft of light: the stage for the testimonies.
+   ============================================================ */
+.chapitre-divider--beam .cd-wash {
+  background:
+    radial-gradient(ellipse 54% 60% at 50% -10%, rgba(217, 228, 210, .22), transparent 62%),
+    radial-gradient(ellipse 60% 50% at 90% 96%, rgba(26, 75, 143, .5), transparent 62%),
+    linear-gradient(180deg, #00132c 0%, #001f4d 52%, #00152f 100%);
+}
+.chapitre-divider--beam .cd-mesh {
+  opacity: .85;
+  background: linear-gradient(
+    104deg,
+    transparent 32%,
+    rgba(217, 228, 210, .1) 46%,
+    rgba(217, 228, 210, .16) 50%,
+    rgba(217, 228, 210, .08) 54%,
+    transparent 70%);
+  animation: cd-sweep 18s ease-in-out infinite;
+}
+@keyframes cd-sweep {
+  0%, 100% { transform: translateX(-6%); opacity: .8; }
+  50%      { transform: translateX(6%);  opacity: 1; }
+}
+.chapitre-divider--beam .cd-figure {
+  inset: 0 auto 0 50%;
+  left: 50%;
+  width: min(700px, 74vw);
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse 50% 70% at 50% 0%, rgba(217, 228, 210, .14), transparent 70%);
+}
+
+/* ============================================================
+   VII · ASCEND — the ascending staircase (paper)
+   Rising steps: formation read as elevation.
+   ============================================================ */
+.chapitre-divider--ascend .cd-wash {
+  background:
+    radial-gradient(ellipse 60% 44% at 6% 6%, rgba(214, 229, 180, .32), transparent 62%),
+    radial-gradient(ellipse 58% 46% at 96% 94%, rgba(0, 59, 122, .1), transparent 62%),
+    linear-gradient(200deg, #fbfdf8 0%, #eef6ea 56%, #fcfefb 100%);
+}
+.chapitre-divider--ascend .cd-mesh {
+  opacity: .7;
+  background-image: repeating-linear-gradient(
+    62deg,
+    rgba(157, 180, 154, .13) 0 1px,
+    transparent 1px 34px);
+  mask-image: linear-gradient(62deg, transparent 12%, #000 58%);
+  -webkit-mask-image: linear-gradient(62deg, transparent 12%, #000 58%);
+}
+.chapitre-divider--ascend .cd-figure {
+  inset: auto 0 0 auto;
+  right: 0;
+  bottom: 0;
+  width: min(480px, 48vw);
+  height: 58%;
+  background-image:
+    linear-gradient(180deg, rgba(157, 180, 154, .2), rgba(157, 180, 154, .03)),
+    linear-gradient(180deg, rgba(157, 180, 154, .16), rgba(157, 180, 154, .02)),
+    linear-gradient(180deg, rgba(157, 180, 154, .12), rgba(157, 180, 154, .02));
+  background-repeat: no-repeat;
+  background-size: 30% 100%, 30% 72%, 30% 46%;
+  background-position: 100% 100%, 66% 100%, 32% 100%;
+  border-bottom: 1px solid rgba(157, 180, 154, .3);
+}
+
+/* ============================================================
+   VIII · CELEBRATION — the confetti finale (warm paper)
+   Scattered sage stars close the numbered chapters.
+   ============================================================ */
+.chapitre-divider--celebration {
+  --cd-chip: rgba(255, 255, 255, .72);
+}
+.chapitre-divider--celebration .cd-wash {
+  background:
+    radial-gradient(ellipse 58% 46% at 16% 8%, rgba(214, 229, 180, .4), transparent 60%),
+    radial-gradient(ellipse 54% 44% at 86% 88%, rgba(180, 198, 174, .34), transparent 60%),
+    linear-gradient(180deg, #fdfefa 0%, #f4f9ee 50%, #fdfefb 100%);
+}
+.chapitre-divider--celebration .cd-mesh {
+  opacity: .9;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(157, 180, 154, .5) 2px, transparent 2.6px),
+    radial-gradient(circle at 50% 50%, rgba(214, 229, 180, .55) 1.6px, transparent 2.2px);
+  background-size: 118px 118px, 74px 74px;
+  background-position: 0 0, 34px 46px;
+  mask-image: linear-gradient(180deg, #000, transparent 86%);
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent 86%);
+}
+.chapitre-divider--celebration .cd-figure {
+  inset: auto 50% -26% auto;
+  right: 50%;
+  bottom: -26%;
+  width: min(620px, 66vw);
+  height: min(620px, 66vw);
+  transform: translateX(50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(214, 229, 180, .24), transparent 66%);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 860px) {
+  .cd-head {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .cd-numeral { font-size: clamp(48px, 16vw, 84px); }
+  .cd-list { grid-template-columns: 1fr; }
+  .cd-numeral-ghost { font-size: clamp(180px, 56vw, 300px); opacity: .8; }
+}
+
+@media (max-width: 560px) {
+  .chapitre-divider { padding: clamp(66px, 15vw, 96px) 0 clamp(56px, 12vw, 84px); }
+  .cd-kicker { font-size: .64rem; letter-spacing: .24em; gap: 10px; }
+  .cd-item > a { padding: 11px 13px 12px; column-gap: 9px; }
+  .cd-dateline { letter-spacing: .18em; font-size: .64rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cd-spark,
+  .chapitre-divider--circuit .cd-figure,
+  .chapitre-divider--bloom .cd-figure,
+  .chapitre-divider--beam .cd-mesh,
+  .cd-kicker .bgfi-star,
+  .cd-rule .bgfi-star {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   SPLIT SECTIONS · Fanzone (chap. V) & Formations (chap. VII)
+   The legacy "triple feature" block mixed a cultural event with
+   two trainings. Splitting it lets each card live in its own
+   chapitre — without touching a word of the copy.
+   ============================================================ */
+
+/* Fanzone — a single celebratory card, centred like a poster */
+.double-grid--solo {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.fanzone-section .double-grid--solo .double-visual { aspect-ratio: 16 / 9; }
+
+/* Formations — two matching cards */
+.formations-section .double-grid { align-items: stretch; }
+.formations-section .double-card { display: flex; flex-direction: column; }
+.formations-section .double-body { display: flex; flex: 1; flex-direction: column; }
+.formations-section .double-body p { margin-bottom: 28px; }
+.formations-section .double-corner { margin-top: auto; }
+
+@media (max-width: 900px) {
+  .double-grid--solo { max-width: none; }
+}
+
+/* ============================================================
+   HEADER NAV · eight chapters instead of five
+   The rail now carries the full chapter plan, so the numerals
+   are tightened and the gap compresses earlier.
+   ============================================================ */
+.main-nav { gap: clamp(12px, 1.7vw, 28px); }
+.main-nav .nav-num {
+  font-variant: small-caps;
+  font-size: 9px;
+  letter-spacing: .06em;
+  opacity: .9;
+}
+@media (max-width: 1320px) {
+  .main-nav { gap: 14px; }
+  .main-nav a { font-size: 10.5px; letter-spacing: .11em; }
+}
+@media (max-width: 1180px) {
+  .main-nav { gap: 11px; }
+  .main-nav a { font-size: 9.5px; letter-spacing: .07em; gap: 5px; }
+}
+
+/* Drawer — roman numerals need a slightly wider gutter */
+.drawer-nav .drawer-num { min-width: 2.4em; }

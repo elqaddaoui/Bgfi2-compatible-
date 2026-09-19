@@ -1,0 +1,258 @@
+/* ============================================================
+   BGFIBank RDC · S1 2026 — TYPOGRAPHY REFINEMENT LAYER
+   ------------------------------------------------------------
+   Loaded after style.css / premium.css / hero-orbit.css so it can
+   harmonise the whole magazine without touching the base sheets.
+
+   PAIRING
+     · Display     Playfair Display   — covers, section titles
+     · Reading     Newsreader         — editorial prose (high
+                       legibility optical-size serif; replaces the
+                       very light Cormorant at body sizes)
+     · Accent      Cormorant Garamond — italic flourishes only
+     · Interface   Inter              — labels, numerals, UI
+
+   PALETTE — strictly BGFI: navy · sage green · white · neutrals.
+   ============================================================ */
+
+:root {
+  --font-display:   'Playfair Display', 'Iowan Old Style', Georgia, serif;
+  --font-editorial: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+  --font-accent:    'Cormorant Garamond', Georgia, serif;
+  --font-body:      'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* ---- Fluid editorial scale (1.5rem base · major-third-ish) ---- */
+  --fs-micro:  0.6875rem;                            /* 11px labels        */
+  --fs-label:  0.75rem;                              /* 12px eyebrows      */
+  --fs-small:  0.875rem;                             /* 14px meta          */
+  --fs-body:   clamp(1rem, 0.94rem + 0.22vw, 1.125rem);      /* 16→18      */
+  --fs-prose:  clamp(1.0625rem, 0.98rem + 0.32vw, 1.1875rem);/* 17→19      */
+  --fs-lead:   clamp(1.125rem, 1.02rem + 0.45vw, 1.375rem);  /* 18→22      */
+  --fs-h4:     clamp(1.0625rem, 0.98rem + 0.34vw, 1.25rem);
+  --fs-h3:     clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem);
+  --fs-h2:     clamp(1.875rem, 1.35rem + 2.1vw, 3.15rem);
+  --fs-h1:     clamp(2.5rem, 1.4rem + 4.6vw, 5.25rem);
+
+  /* ---- Rhythm ---- */
+  --lh-tight:  1.08;
+  --lh-title:  1.14;
+  --lh-snug:   1.42;
+  --lh-prose:  1.72;
+  --measure:   66ch;
+
+  /* ---- Tracking ---- */
+  --tr-display: -0.022em;
+  --tr-title:   -0.014em;
+  --tr-body:     0.001em;
+  --tr-label:    0.2em;
+  --tr-caps:     0.14em;
+
+  /* ---- Accessible ink levels (AA verified on paper / navy) ---- */
+  --ink-strong:  #131824;
+  --ink:         #1c2230;
+  --ink-soft:    #414859;
+  --ink-mute:    #646c7e;
+  --sage-on-paper: #566d50;   /* 5.4:1 on --bgfi-paper  */
+
+  --on-navy:        rgba(255,255,255,.94);
+  --on-navy-soft:   rgba(233,241,231,.80);
+  --on-navy-mute:   rgba(226,235,224,.62);
+  --sage-on-navy:   #c2d2bc;  /* 8.1:1 on #001f4d       */
+}
+
+/* ------------------------------------------------------------
+   1 · Global rendering quality
+   ------------------------------------------------------------ */
+html { font-size: 100%; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  letter-spacing: var(--tr-body);
+  color: var(--ink);
+  text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+  font-variant-ligatures: common-ligatures contextual;
+  font-kerning: normal;
+}
+
+::selection { background: rgba(0, 59, 122, .92); color: #fff; }
+
+/* Hyphenation-free justification: keep ragged right for elegance,
+   but stop orphaned prepositions from breaking the rag. */
+p { text-wrap: pretty; }
+h1, h2, h3, h4, .hero-line, .closing-title { text-wrap: balance; }
+
+/* Tabular figures for every measured value in the magazine */
+.indicator-value, .perf-stat-value, .family-value, .stat-value,
+.agenda-date, .summary-num, .drawer-num, .nav-num, .sub-stat-value {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* ------------------------------------------------------------
+   2 · Display hierarchy — tighter tracking at large sizes,
+       looser at small sizes (classic optical compensation)
+   ------------------------------------------------------------ */
+.hero-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+  font-weight: 600;
+}
+
+.section-title,
+.chapter-title,
+.story-title,
+.mag-title,
+.feature-title,
+.perf-title,
+.closing-title {
+  font-family: var(--font-display);
+  letter-spacing: var(--tr-title);
+  line-height: var(--lh-title);
+  font-weight: 600;
+}
+.section-title { font-size: var(--fs-h2); }
+
+/* Italic accents keep the Cormorant flourish — it shines at
+   display sizes where its high contrast reads as luxury. */
+.hero-title em,
+.section-title em,
+.chapter-title em,
+.story-title em,
+.mag-title em,
+.feature-title em,
+.perf-title em,
+.closing-title em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+/* ------------------------------------------------------------
+   3 · Reading prose — Newsreader, generous measure & rhythm
+   ------------------------------------------------------------ */
+.edito-prose p,
+.mag-content p,
+.feature-text.light p,
+.story-lead,
+.mag-lead,
+.chapter-lead,
+.section-lead,
+.perf-intro,
+.perf-close,
+.hero-subtitle,
+.muanda-caption,
+.pillar p,
+.kbm-offer p,
+.closing-text {
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  letter-spacing: 0.002em;
+}
+
+.edito-prose p,
+.mag-content p,
+.feature-text.light p {
+  font-size: var(--fs-prose);
+  line-height: var(--lh-prose);
+}
+.edito-prose { max-width: var(--measure); }
+.mag-content p { max-width: 62ch; }
+
+.section-lead,
+.chapter-lead,
+.story-lead,
+.mag-lead,
+.perf-intro,
+.hero-subtitle {
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+}
+
+/* Drop cap — refined to sit on the baseline grid */
+.edito-prose > p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--bgfi-blue-deep);
+}
+
+/* Sub-headings inside stories */
+.summary-title, .pillar h4, .family-title,
+.agenda-title, .footer-links h5, .footer-social h5 {
+  font-family: var(--font-display);
+  letter-spacing: -0.008em;
+  font-weight: 600;
+}
+.summary-desc,
+.agenda-text,
+.family-desc {
+  font-family: var(--font-editorial);
+  font-size: var(--fs-small);
+  line-height: var(--lh-snug);
+  letter-spacing: 0.004em;
+  color: var(--ink-soft);
+}
+
+/* ------------------------------------------------------------
+   4 · Labels / eyebrows / captions — Inter, wide tracking
+   ------------------------------------------------------------ */
+.eyebrow-text,
+.section-eyebrow .eyebrow-text,
+.hero-eyebrow,
+.story-month,
+.story-rubric,
+.indicator-label,
+.perf-stat-label,
+.family-label,
+.edition-badge,
+.hero-meta-label,
+.figure-caption {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-label);
+  font-size: var(--fs-micro);
+  line-height: 1.5;
+}
+
+/* ------------------------------------------------------------
+   5 · Contrast corrections (WCAG AA on every surface)
+   ------------------------------------------------------------ */
+.section-lead, .story-lead, .perf-intro, .perf-close,
+.summary-desc, .pillar p, .agenda-text { color: var(--ink-soft); }
+
+.edito-prose p, .mag-lead, .chapter-lead { color: var(--ink); }
+
+.feature-text.light p,
+.kbm-offer p,
+.hero-subtitle { color: var(--on-navy-soft); }
+
+/* Sage green is decorative on light surfaces — never body text.
+   Where it carries meaning we use the darker ink-sage. */
+.story-rubric, .eyebrow-text .accent, .summary-num { color: var(--sage-on-paper); }
+
+/* ------------------------------------------------------------
+   6 · Mobile reading comfort
+   ------------------------------------------------------------ */
+@media (max-width: 700px) {
+  :root {
+    --lh-prose: 1.68;
+    --measure: 100%;
+    --tr-label: 0.16em;
+  }
+  .edito-prose p, .mag-content p, .feature-text.light p { font-size: 1.0625rem; }
+  .mag-content p { max-width: none; }
+}
+
+/* ------------------------------------------------------------
+   7 · Print
+   ------------------------------------------------------------ */
+@media print {
+  body { font-size: 11pt; color: #000; }
+  .hero-title, .section-title { color: #000; }
+}

@@ -1,0 +1,276 @@
+/* ============================================================
+   BGFIBank RDC · HERO ORBITAL SYSTEM — v6
+   The BGFI mark as a slowly turning medallion, wrapped in
+   transparent orbital rings travelled by small white BGFI stars.
+   Luxury banking language: sage · navy · ivory · soft light.
+   ============================================================ */
+
+.hero-orbit {
+  --stage: clamp(340px, 38vw, 620px);
+  position: absolute;
+  left: 70%;
+  top: 40%;
+  width: var(--stage);
+  height: var(--stage);
+  z-index: 4;
+  pointer-events: none;
+  transform: translate3d(
+    calc(-50% + var(--ox, 0px)),
+    calc(-50% + var(--oy, 0px) + var(--sy, 0px)),
+    0
+  );
+  will-change: transform;
+  opacity: 0;
+  animation: orbitStageIn 2.4s var(--ease-out, cubic-bezier(.16,1,.3,1)) .35s forwards;
+}
+@keyframes orbitStageIn { to { opacity: 1; } }
+
+.orbit-stage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+/* ---- Ring canvases: back half behind the mark, front half above it ---- */
+.orbit-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.orbit-canvas--back  { z-index: 1; }
+.orbit-canvas--front { z-index: 3; }
+
+/* ------------------------------------------------------------
+   CORE — the BGFI mark medallion
+   ------------------------------------------------------------ */
+.orbit-core {
+  position: relative;
+  z-index: 2;
+  width: 39%;
+  aspect-ratio: 517 / 494;
+  display: grid;
+  place-items: center;
+  animation: orbitCoreBreathe 11s var(--ease-lux, cubic-bezier(.65,.05,.36,1)) infinite alternate;
+}
+@keyframes orbitCoreBreathe {
+  0%   { transform: scale(1)     translateY(0); }
+  100% { transform: scale(1.035) translateY(-1.5%); }
+}
+
+/* Soft field of light the mark floats in */
+.orbit-aura {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 320%; height: 320%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(217,228,210,.22) 0%, rgba(157,180,154,.12) 34%, rgba(26,75,143,.10) 58%, transparent 74%);
+  filter: blur(26px);
+  opacity: .9;
+  animation: orbitAuraBreathe 13s ease-in-out infinite alternate;
+}
+@keyframes orbitAuraBreathe {
+  0%   { transform: translate(-50%, -50%) scale(1);    opacity: .72; }
+  100% { transform: translate(-50%, -50%) scale(1.14); opacity: 1; }
+}
+
+/* Tight halo hugging the mark — gives the medallion its weight */
+.orbit-halo {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 152%; height: 152%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255,255,255,.16) 0%, rgba(217,228,210,.08) 40%, transparent 66%);
+  filter: blur(12px);
+  animation: orbitHaloPulse 8s ease-in-out infinite alternate;
+}
+@keyframes orbitHaloPulse {
+  0%   { opacity: .55; }
+  100% { opacity: .95; }
+}
+
+/* Glass plate under the mark — reflection catch, very subtle */
+.orbit-plate {
+  position: absolute;
+  left: 50%; top: 58%;
+  width: 190%; height: 130%;
+  transform: translate(-50%, 0) perspective(600px) rotateX(72deg);
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(157,180,154,.16), transparent 68%);
+  filter: blur(16px);
+  opacity: .6;
+  pointer-events: none;
+}
+
+/* ---- The turning mark ----
+   A rectangular mark tumbling through arbitrary angles reads as
+   crooked. So the mark turns like a struck medallion instead:
+   a slow yaw around its vertical axis, with a whisper of sway.
+   It always returns to upright — poised, never haphazard. */
+.orbit-logo-spin {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: orbitMedallionTurn 34s cubic-bezier(.45,0,.55,1) infinite;
+  will-change: transform;
+}
+@keyframes orbitMedallionTurn {
+  0%   { transform: perspective(1100px) rotateY(0deg)    rotateX(0deg)     rotate(0deg); }
+  25%  { transform: perspective(1100px) rotateY(24deg)   rotateX(-3.5deg)  rotate(1.6deg); }
+  50%  { transform: perspective(1100px) rotateY(0deg)    rotateX(0deg)     rotate(0deg); }
+  75%  { transform: perspective(1100px) rotateY(-24deg)  rotateX(3.5deg)   rotate(-1.6deg); }
+  100% { transform: perspective(1100px) rotateY(0deg)    rotateX(0deg)     rotate(0deg); }
+}
+
+.orbit-logo {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 26px 60px rgba(0, 13, 36, .55))
+    drop-shadow(0 0 26px rgba(217, 228, 210, .22));
+}
+
+/* Sheen — a soft band of light sweeping across the mark,
+   clipped to the mark's own silhouette. */
+.orbit-logo-sheen,
+.orbit-logo-specular {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  -webkit-mask-image: url("../images/logo-mark.png");
+          mask-image: url("../images/logo-mark.png");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+}
+.orbit-logo-sheen {
+  background: linear-gradient(
+    104deg,
+    rgba(255,255,255,0)    38%,
+    rgba(255,255,255,.30)  47%,
+    rgba(255,255,255,.62)  50%,
+    rgba(217,228,210,.28)  54%,
+    rgba(255,255,255,0)    63%
+  );
+  background-size: 280% 100%;
+  background-repeat: no-repeat;
+  background-position: 210% 0;
+  mix-blend-mode: screen;
+  opacity: .85;
+  animation: orbitSheenSweep 9s cubic-bezier(.5,0,.5,1) infinite;
+}
+@keyframes orbitSheenSweep {
+  0%       { background-position: 210% 0; opacity: 0; }
+  12%      { opacity: .9; }
+  58%      { opacity: .9; }
+  70%,100% { background-position: -110% 0; opacity: 0; }
+}
+
+/* Slow ambient specular — keeps the mark alive between sweeps */
+.orbit-logo-specular {
+  background:
+    radial-gradient(ellipse 46% 40% at 34% 26%, rgba(255,255,255,.34), transparent 68%),
+    radial-gradient(ellipse 40% 34% at 72% 74%, rgba(217,228,210,.20), transparent 70%);
+  mix-blend-mode: screen;
+  animation: orbitSpecularDrift 17s ease-in-out infinite alternate;
+}
+@keyframes orbitSpecularDrift {
+  0%   { opacity: .5;  transform: translate(-1.5%, -1%)  scale(1); }
+  100% { opacity: .95; transform: translate(2%, 1.5%)    scale(1.06); }
+}
+
+/* ------------------------------------------------------------
+   BREATHING BACKGROUND — the hero gradient inhales / exhales
+   ------------------------------------------------------------ */
+.hero-gradient::before,
+.hero-gradient::after {
+  content: '';
+  position: absolute;
+  inset: -12%;
+  pointer-events: none;
+}
+.hero-gradient::before {
+  background:
+    radial-gradient(ellipse 46% 40% at 68% 38%, rgba(26,75,143,.42), transparent 66%),
+    radial-gradient(ellipse 38% 34% at 74% 44%, rgba(157,180,154,.16), transparent 70%);
+  filter: blur(10px);
+  animation: heroBreathA 19s ease-in-out infinite alternate;
+}
+.hero-gradient::after {
+  background:
+    radial-gradient(ellipse 52% 44% at 18% 62%, rgba(0,59,122,.34), transparent 68%),
+    radial-gradient(ellipse 34% 30% at 86% 82%, rgba(180,198,174,.14), transparent 72%);
+  filter: blur(14px);
+  animation: heroBreathB 25s ease-in-out infinite alternate;
+}
+@keyframes heroBreathA {
+  0%   { transform: scale(1)    translate3d(0,0,0);          opacity: .72; }
+  100% { transform: scale(1.09) translate3d(-1.6%,-1.1%,0);  opacity: 1; }
+}
+@keyframes heroBreathB {
+  0%   { transform: scale(1.06) translate3d(1.2%, .8%, 0);   opacity: .95; }
+  100% { transform: scale(1)    translate3d(0,0,0);          opacity: .68; }
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+   ------------------------------------------------------------ */
+@media (max-width: 1200px) {
+  .hero-orbit { left: 72%; --stage: clamp(300px, 40vw, 520px); }
+}
+
+@media (max-width: 900px) {
+  .hero-orbit {
+    left: 50%;
+    top: 26vh;
+    --stage: min(76vw, 330px);
+  }
+  .orbit-core { width: 42%; }
+}
+
+@media (max-width: 420px) {
+  .hero-orbit { top: 26vh; --stage: min(80vw, 290px); }
+}
+
+/* Short landscape screens — keep the mark out of the headline */
+@media (max-height: 620px) and (min-width: 901px) {
+  .hero-orbit { --stage: clamp(260px, 32vw, 400px); top: 42%; }
+}
+
+/* ------------------------------------------------------------
+   REDUCED MOTION — everything settles, nothing moves
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .hero-orbit { opacity: 1; animation: none; }
+  .orbit-core,
+  .orbit-aura,
+  .orbit-halo,
+  .orbit-logo-spin,
+  .orbit-logo-sheen,
+  .orbit-logo-specular,
+  .hero-gradient::before,
+  .hero-gradient::after { animation: none !important; }
+  .orbit-logo-sheen { opacity: .35; background-position: 40% 0; }
+}
+
+/* Print — the mark stays, the light show does not */
+@media print {
+  .hero-orbit { position: static; opacity: 1; transform: none; }
+  .orbit-canvas, .orbit-aura, .orbit-halo, .orbit-plate,
+  .orbit-logo-sheen, .orbit-logo-specular { display: none; }
+}

@@ -1,0 +1,627 @@
+/* ============================================================
+   BGFIBank RDC · S1 2026 — NAVIGATION SYSTEM
+   ------------------------------------------------------------
+   · Desktop: dark navy editorial masthead (glass on scroll)
+   · Mobile : full-height side drawer, magazine sommaire
+   Palette: BGFI navy · sage green · white · neutrals only.
+   ============================================================ */
+
+:root {
+  --nav-h:        76px;
+  --nav-h-sm:     64px;
+  --nav-navy:     #061530;
+  --nav-navy-2:   #0a2148;
+  --nav-navy-3:   #0c2a5a;
+  --nav-line:     rgba(194, 210, 188, .16);
+  --nav-ink:      rgba(255, 255, 255, .90);
+  --nav-ink-mute: rgba(214, 226, 210, .58);
+}
+
+/* ------------------------------------------------------------
+   1 · Masthead shell
+   ------------------------------------------------------------ */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 300;
+  height: var(--nav-h);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(100deg,
+              var(--nav-navy) 0%,
+              var(--nav-navy-2) 46%,
+              var(--nav-navy-3) 78%,
+              #0a2450 100%);
+  border-bottom: 1px solid var(--nav-line);
+  box-shadow: 0 1px 0 rgba(255,255,255,.04) inset;
+  transition: height .45s var(--ease), background .45s var(--ease),
+              box-shadow .45s var(--ease), backdrop-filter .45s var(--ease);
+}
+
+/* Hairline sage glow that travels the full masthead width */
+.site-header::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg,
+              transparent 0%,
+              rgba(157,180,154,.10) 18%,
+              rgba(194,210,188,.46) 50%,
+              rgba(157,180,154,.10) 82%,
+              transparent 100%);
+  pointer-events: none;
+}
+
+/* Very subtle starfield texture, keeps the bar from reading flat */
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1px 1px at 14% 30%, rgba(255,255,255,.22), transparent 60%),
+    radial-gradient(1px 1px at 38% 72%, rgba(194,210,188,.18), transparent 60%),
+    radial-gradient(1.5px 1.5px at 66% 26%, rgba(255,255,255,.16), transparent 60%),
+    radial-gradient(1px 1px at 88% 64%, rgba(194,210,188,.16), transparent 60%),
+    radial-gradient(ellipse 46% 120% at 78% 50%, rgba(26,75,143,.42), transparent 70%);
+  opacity: .85;
+  pointer-events: none;
+}
+
+.site-header.scrolled {
+  height: var(--nav-h-sm);
+  background: linear-gradient(100deg,
+              rgba(6,21,48,.90) 0%,
+              rgba(10,33,72,.90) 46%,
+              rgba(12,42,90,.88) 100%);
+  backdrop-filter: blur(22px) saturate(1.35);
+  -webkit-backdrop-filter: blur(22px) saturate(1.35);
+  box-shadow: 0 10px 40px rgba(0,10,30,.42);
+}
+
+.header-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 3vw, 46px);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(18px, 3vw, 40px);
+}
+
+/* ------------------------------------------------------------
+   2 · Brand lockup
+   ------------------------------------------------------------ */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  transition: opacity .35s var(--ease);
+}
+.brand-logo {
+  height: 30px;
+  width: auto;
+  transition: transform .5s var(--ease), filter .5s var(--ease);
+  filter: drop-shadow(0 2px 10px rgba(0, 8, 24, .55));
+}
+.brand-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  color: #fff;
+  filter: drop-shadow(0 2px 10px rgba(0, 8, 24, .55));
+  transition: transform .5s var(--ease), filter .5s var(--ease);
+}
+.brand-wordmark strong {
+  font-family: var(--font-body);
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.075em;
+}
+.brand-wordmark span {
+  font-family: var(--font-body);
+  font-size: 20px;
+  /* "Lisolo" matches the weight of "BGFI" — one single bold lockup */
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.055em;
+}
+.brand-wordmark::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-left: 1px;
+  align-self: flex-start;
+  background: var(--sage-on-navy);
+  clip-path: polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);
+}
+.site-header.scrolled .brand-logo { height: 27px; }
+.site-header.scrolled .brand-wordmark { transform: scale(.94); transform-origin: left center; }
+.brand:hover .brand-logo,
+.brand:hover .brand-wordmark {
+  transform: translateY(-1px) scale(1.02);
+  filter: drop-shadow(0 4px 18px rgba(157, 180, 154, .40));
+}
+.brand:focus-visible { outline: 2px solid var(--sage-on-navy); outline-offset: 6px; border-radius: 4px; }
+
+/* ------------------------------------------------------------
+   3 · Desktop nav — numbered editorial links
+   ------------------------------------------------------------ */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 2.6vw, 40px);
+}
+.main-nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 9px 2px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: var(--nav-ink);
+  white-space: nowrap;
+  transition: color .35s var(--ease);
+}
+.main-nav a > span:first-child,
+.nav-num {
+  font-family: var(--font-display);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: var(--nav-ink-mute);
+  transition: color .35s var(--ease), transform .45s var(--ease);
+}
+
+/* Sage underline that grows from the left */
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 2px;
+  width: 0; height: 1px;
+  background: linear-gradient(90deg, rgba(194,210,188,.95), rgba(157,180,154,.15));
+  transition: width .45s var(--ease);
+}
+.main-nav a:hover,
+.main-nav a:focus-visible { color: #fff; outline: none; }
+.main-nav a:hover::after,
+.main-nav a:focus-visible::after { width: 100%; }
+.main-nav a:hover .nav-num,
+.main-nav a:hover > span:first-child { color: var(--sage-on-navy); transform: translateY(-1px); }
+
+/* Active chapter — a small sage dot above the label */
+.main-nav a.is-active { color: #fff; }
+.main-nav a.is-active::after { width: 100%; background: linear-gradient(90deg, rgba(194,210,188,.95), rgba(194,210,188,.25)); }
+.main-nav a.is-active .nav-num { color: var(--sage-on-navy); }
+
+/* ------------------------------------------------------------
+   4 · Edition badge (right rail)
+   ------------------------------------------------------------ */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: flex-end;
+}
+.edition-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 17px;
+  border: 1px solid rgba(194, 210, 188, .34);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, .045);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: border-color .4s var(--ease), background .4s var(--ease);
+}
+.edition-badge:hover { border-color: rgba(194, 210, 188, .6); background: rgba(255,255,255,.08); }
+.edition-badge b { color: var(--sage-on-navy); font-weight: 700; }
+.edition-badge .bgfi-star {
+  background: rgba(230, 240, 228, .95);
+  width: 8px; height: 8px;
+  animation: bgfi-star-spin 26s linear infinite;
+}
+
+/* Subscribe pill — appears once the reader is inside the magazine */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 100px;
+  background: linear-gradient(120deg, #f7faf6, #e6efe3);
+  color: #06162f;
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 8px 26px rgba(0, 12, 34, .38);
+  opacity: 0;
+  transform: translateY(-4px) scale(.96);
+  pointer-events: none;
+  transition: opacity .5s var(--ease), transform .5s var(--ease), box-shadow .4s var(--ease);
+}
+.site-header.scrolled .nav-cta {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.nav-cta:hover { box-shadow: 0 12px 32px rgba(157, 180, 154, .45); transform: translateY(-1px); }
+
+/* ------------------------------------------------------------
+   5 · Reading progress — sits on the masthead's lower edge
+   ------------------------------------------------------------ */
+.reading-progress {
+  position: fixed;
+  top: calc(var(--nav-h) - 2px);
+  left: 0; right: 0;
+  height: 2px;
+  width: 100%;
+  background: transparent;
+  z-index: 301;
+  transition: top .45s var(--ease);
+  pointer-events: none;
+}
+.site-header.scrolled ~ .reading-progress,
+body.nav-compact .reading-progress { top: calc(var(--nav-h-sm) - 2px); }
+.reading-progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, rgba(194,210,188,.45), #c2d2bc 55%, #ffffff 100%);
+  box-shadow: 0 0 12px rgba(194, 210, 188, .55);
+  transition: width .1s linear;
+}
+
+/* ------------------------------------------------------------
+   6 · Burger — three sage rules that morph into a cross
+   ------------------------------------------------------------ */
+.nav-toggle {
+  display: none;
+  position: relative;
+  width: 46px; height: 46px;
+  margin-right: -8px;
+  border: 1px solid rgba(194, 210, 188, .26);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .05);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color .35s var(--ease), background .35s var(--ease);
+}
+.nav-toggle:hover { border-color: rgba(194, 210, 188, .55); }
+.nav-toggle span {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 17px; height: 1.5px;
+  border-radius: 2px;
+  background: #eef4ec;
+  transform-origin: center;
+  transition: transform .48s var(--ease), opacity .3s var(--ease), width .4s var(--ease);
+}
+.nav-toggle span:nth-child(1) { transform: translate(-50%, -6px); }
+.nav-toggle span:nth-child(2) { transform: translate(-50%, -50%); width: 12px; }
+.nav-toggle span:nth-child(3) { transform: translate(-50%, 5px); }
+body.drawer-open .nav-toggle span:nth-child(1) { transform: translate(-50%, -50%) rotate(45deg); }
+body.drawer-open .nav-toggle span:nth-child(2) { opacity: 0; width: 0; }
+body.drawer-open .nav-toggle span:nth-child(3) { transform: translate(-50%, -50%) rotate(-45deg); }
+
+/* ============================================================
+   7 · MOBILE DRAWER — the magazine sommaire
+   ============================================================ */
+.nav-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 380;
+  background: rgba(3, 10, 24, .58);
+  backdrop-filter: blur(7px) saturate(.9);
+  -webkit-backdrop-filter: blur(7px) saturate(.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s var(--ease), visibility .5s;
+}
+body.drawer-open .nav-scrim { opacity: 1; visibility: visible; }
+
+.nav-drawer {
+  position: fixed;
+  top: 0; right: 0;
+  z-index: 390;
+  width: min(87vw, 400px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 120% 60% at 100% 0%,   rgba(26, 75, 143, .55), transparent 62%),
+    radial-gradient(ellipse 130% 55% at 0% 100%,   rgba(157, 180, 154, .16), transparent 64%),
+    linear-gradient(168deg, #071a3a 0%, #08203f 42%, #0a2a58 100%);
+  box-shadow: -30px 0 90px rgba(0, 8, 22, .62);
+  transform: translateX(101%);
+  transition: transform .62s cubic-bezier(.62, .04, .28, 1);
+  visibility: hidden;
+}
+body.drawer-open .nav-drawer { transform: none; visibility: visible; }
+
+/* Left hairline + star texture */
+.nav-drawer::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(194,210,188,.42) 26%, rgba(194,210,188,.42) 74%, transparent);
+}
+.drawer-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(1.5px 1.5px at 18% 12%, rgba(255,255,255,.30), transparent 60%),
+    radial-gradient(1px 1px at 74% 22%,   rgba(194,210,188,.30), transparent 60%),
+    radial-gradient(1px 1px at 32% 46%,   rgba(255,255,255,.20), transparent 60%),
+    radial-gradient(1.5px 1.5px at 86% 58%, rgba(194,210,188,.26), transparent 60%),
+    radial-gradient(1px 1px at 22% 78%,   rgba(255,255,255,.18), transparent 60%),
+    radial-gradient(1px 1px at 62% 90%,   rgba(194,210,188,.22), transparent 60%);
+  animation: bgfi-star-twinkle 9s ease-in-out infinite;
+}
+
+/* ---- Drawer head ---- */
+.drawer-head {
+  position: relative;
+  z-index: 2;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: var(--nav-h-sm);
+  padding: 0 22px 0 26px;
+  border-bottom: 1px solid rgba(194, 210, 188, .13);
+}
+.drawer-head .brand-logo { height: 24px; filter: none; }
+.drawer-head .brand-wordmark { filter: none; }
+.drawer-close {
+  position: relative;
+  width: 38px; height: 38px;
+  flex: none;
+  border: 1px solid rgba(194, 210, 188, .28);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color .35s var(--ease), transform .45s var(--ease);
+}
+.drawer-close:hover { border-color: rgba(194,210,188,.6); transform: rotate(90deg); }
+.drawer-close::before, .drawer-close::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 13px; height: 1.4px;
+  background: #eef4ec;
+  border-radius: 2px;
+}
+.drawer-close::before { transform: translate(-50%,-50%) rotate(45deg); }
+.drawer-close::after  { transform: translate(-50%,-50%) rotate(-45deg); }
+
+/* ---- Scrollable sommaire ---- */
+.drawer-body {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 30px 26px 18px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(194,210,188,.35) transparent;
+}
+.drawer-body::-webkit-scrollbar { width: 3px; }
+.drawer-body::-webkit-scrollbar-thumb { background: rgba(194,210,188,.35); border-radius: 3px; }
+
+.drawer-label {
+  display: block;
+  margin-bottom: 26px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: rgba(226, 236, 224, .68);
+}
+.drawer-label b { color: #fff; font-weight: 700; }
+
+.drawer-nav { display: block; }
+.drawer-link {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 19px 30px 19px 0;
+  border-top: 1px solid rgba(194, 210, 188, .15);
+  opacity: 0;
+  transform: translateX(22px);
+  transition: opacity .55s var(--ease), transform .55s var(--ease), padding-left .4s var(--ease);
+}
+.drawer-link:first-child { border-top: none; padding-top: 6px; }
+body.drawer-open .drawer-link { opacity: 1; transform: none; transition-delay: calc(var(--i, 0) * 45ms + 130ms); }
+
+.drawer-num {
+  flex: none;
+  width: 22px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: rgba(214, 226, 210, .55);
+  transition: color .35s var(--ease);
+}
+.drawer-title {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -.012em;
+  color: #fdfefc;
+  transition: color .35s var(--ease), transform .45s var(--ease);
+}
+.drawer-title em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  color: var(--sage-on-navy);
+}
+/* Sage chevron revealed on press / hover */
+.drawer-link::after {
+  content: '';
+  position: absolute;
+  right: 4px; top: 50%;
+  width: 6px; height: 6px;
+  border-right: 1.4px solid rgba(194,210,188,.55);
+  border-top: 1.4px solid rgba(194,210,188,.55);
+  transform: translateY(-50%) rotate(45deg);
+  opacity: 0;
+  transition: opacity .35s var(--ease), right .4s var(--ease);
+}
+.drawer-link:hover::after,
+.drawer-link:focus-visible::after,
+.drawer-link.is-active::after { opacity: 1; right: 0; }
+.drawer-link:hover .drawer-title,
+.drawer-link:focus-visible .drawer-title { transform: translateX(3px); }
+.drawer-link:hover .drawer-num { color: var(--sage-on-navy); }
+.drawer-link:focus-visible { outline: none; }
+
+/* Current chapter marker — a sage rule at the left edge */
+.drawer-link.is-active { padding-left: 14px; }
+.drawer-link.is-active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 22%; bottom: 22%;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #c2d2bc, rgba(157,180,154,.25));
+}
+.drawer-link.is-active .drawer-num { color: var(--sage-on-navy); }
+
+/* ---- Drawer foot ---- */
+.drawer-foot {
+  position: relative;
+  z-index: 2;
+  flex: none;
+  padding: 22px 26px calc(24px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid rgba(194, 210, 188, .15);
+  background: linear-gradient(180deg, rgba(6, 20, 44, 0), rgba(5, 16, 36, .55));
+}
+.drawer-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 17px 20px;
+  border-radius: 100px;
+  background: linear-gradient(120deg, #ffffff, #eaf1e7);
+  color: #06162f;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  box-shadow: 0 16px 40px rgba(0, 8, 24, .48);
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.drawer-cta:active { transform: scale(.985); }
+.drawer-cta .bgfi-star {
+  width: 10px; height: 10px;
+  background: #4d6547;
+  animation: bgfi-star-spin 20s linear infinite;
+}
+.drawer-meta {
+  margin-top: 14px;
+  text-align: center;
+  font-family: var(--font-editorial);
+  font-size: 12.5px;
+  font-style: italic;
+  letter-spacing: .02em;
+  color: rgba(220, 232, 218, .55);
+}
+
+/* ------------------------------------------------------------
+   8 · Breakpoints
+   ------------------------------------------------------------ */
+@media (max-width: 1180px) {
+  .main-nav { gap: 20px; }
+  .main-nav a { font-size: 10.5px; letter-spacing: .13em; }
+}
+@media (max-width: 1040px) {
+  .nav-cta { display: none; }
+}
+@media (max-width: 960px) {
+  :root { --nav-h: 66px; --nav-h-sm: 60px; }
+  .main-nav { display: none; }
+  .nav-toggle { display: block; }
+  .header-inner { grid-template-columns: auto 1fr; }
+  .header-actions { gap: 10px; }
+  .edition-badge { padding: 6px 13px; font-size: 9.5px; letter-spacing: .14em; }
+  .brand-logo, .site-header.scrolled .brand-logo { height: 26px; }
+  .brand-wordmark strong { font-size: 22px; }
+  .brand-wordmark span { font-size: 18px; }
+}
+@media (max-width: 560px) {
+  .edition-badge .bgfi-star { display: none; }
+  .edition-badge { padding: 5px 11px; gap: 0; font-size: 9px; }
+  .drawer-title { font-size: 1.19rem; }
+  .drawer-body { padding: 24px 22px 14px; }
+  .drawer-link { padding-top: 16px; padding-bottom: 16px; }
+}
+@media (max-width: 400px) {
+  .header-inner { padding-inline: 12px; gap: 8px; }
+  .header-actions { gap: 7px; }
+  .edition-badge { display: inline-flex; padding: 5px 7px; font-size: 7.5px; letter-spacing: .08em; }
+  .nav-toggle { width: 40px; height: 40px; margin-right: -3px; }
+  .brand-wordmark { gap: 4px; }
+  .brand-wordmark strong { font-size: 18px; }
+  .brand-wordmark span { font-size: 15px; }
+  .brand-wordmark::after { width: 4px; height: 4px; }
+}
+
+/* Body scroll lock while the drawer is open */
+body.drawer-open { overflow: hidden; }
+
+/* ------------------------------------------------------------
+   9 · Reduced motion
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .site-header, .nav-drawer, .nav-scrim, .drawer-link,
+  .nav-toggle span, .brand-logo, .nav-cta {
+    transition-duration: .01ms !important;
+  }
+  .drawer-stars, .edition-badge .bgfi-star, .drawer-cta .bgfi-star { animation: none; }
+  .drawer-link { opacity: 1; transform: none; }
+}
+
+/* ------------------------------------------------------------
+   Anchor landing — keep section openings clear of the masthead
+   ------------------------------------------------------------ */
+html { scroll-padding-top: calc(var(--nav-h) + 14px); }
+section[id] { scroll-margin-top: calc(var(--nav-h) + 14px); }
+
+@media (max-width: 960px) {
+  html { scroll-padding-top: calc(var(--nav-h) + 10px); }
+  section[id] { scroll-margin-top: calc(var(--nav-h) + 10px); }
+}

@@ -1,0 +1,2524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BGFIBank RDC — Actus · Semestre 1 · 2026 · Édition Premium</title>
+<meta name="description" content="La newsletter premium de BGFIBank RDC — Semestre 1 · 2026. Un magazine digital éditorial : édito du DG, performances, transformation digitale, RakkaCash V2, DRC Mining Week, BGFI Tour et bien plus." />
+<meta name="theme-color" content="#001f4d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/dg-portrait.webp" imagesrcset="images/dg-portrait-560.webp 560w, images/dg-portrait.webp 900w" imagesizes="(max-width: 640px) 78vw, (max-width: 1024px) 46vw, 34vw">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/premium.css">
+<link rel="stylesheet" href="css/hero-orbit.css">
+<link rel="stylesheet" href="css/typography.css">
+<link rel="stylesheet" href="css/navigation.css">
+<link rel="stylesheet" href="css/subscribe.css">
+<link rel="stylesheet" href="css/finale.css">
+<link rel="stylesheet" href="css/redesign.css">
+<link rel="stylesheet" href="css/chapitres.css">
+<link rel="preload" as="image" href="images/logo-mark.png">
+<link rel="preload" as="image" href="images/logo-lockup-light.png">
+<link rel="icon" type="image/png" href="images/logo-mark.png">
+<noscript><style>.reveal,.reveal-up,.reveal-left,.reveal-right{opacity:1 !important;transform:none !important}.edito-curve-path{stroke-dashoffset:0 !important}</style></noscript>
+</head>
+<body>
+
+<!-- ===== Particle canvas (ambient stars, GPU) ===== -->
+<canvas class="particle-canvas" id="particleCanvas" aria-hidden="true"></canvas>
+
+<!-- ===== Header ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#hero" class="brand" aria-label="BGFI Lisolo — retour à la couverture">
+      <img class="brand-mark" src="images/2026/bgfi-lisolo-mark.png" alt="" width="258" height="246" aria-hidden="true">
+      <span class="brand-wordmark" aria-hidden="true"><strong>BGFI</strong><span>Lisolo</span></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Sommaire du numéro">
+      <a href="#chapitre-1"><span class="nav-num">I</span>Édito</a>
+      <a href="#chapitre-2"><span class="nav-num">II</span>Indicateurs</a>
+      <a href="#chapitre-3"><span class="nav-num">III</span>Vie sociale</a>
+      <a href="#chapitre-4"><span class="nav-num">IV</span>Innovation</a>
+      <a href="#chapitre-5"><span class="nav-num">V</span>Engagement</a>
+      <a href="#chapitre-6"><span class="nav-num">VI</span>Valeurs</a>
+      <a href="#chapitre-7"><span class="nav-num">VII</span>Formation</a>
+      <a href="#chapitre-8"><span class="nav-num">VIII</span>Famille</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#abonnement" class="nav-cta">S'abonner</a>
+      <span class="edition-badge">
+        <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+        <span class="edition-badge-text">N°01 · S1 <b>2026</b></span>
+      </span>
+      <button class="nav-toggle" id="navToggle" type="button"
+              aria-label="Ouvrir le sommaire" aria-expanded="false" aria-controls="navDrawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Reading progress ===== -->
+<div class="reading-progress" id="readingProgress"><span></span></div>
+
+<!-- ============================================================
+     MOBILE DRAWER — Sommaire du numéro
+     ============================================================ -->
+<div class="nav-scrim" id="navScrim" hidden></div>
+
+<aside class="nav-drawer" id="navDrawer" aria-label="Sommaire du numéro" aria-hidden="true">
+  <span class="drawer-stars" aria-hidden="true"></span>
+
+  <div class="drawer-head">
+    <a href="#hero" class="brand" data-drawer-close aria-label="BGFI Lisolo">
+      <img class="brand-mark" src="images/2026/bgfi-lisolo-mark.png" alt="" width="258" height="246" aria-hidden="true">
+      <span class="brand-wordmark" aria-hidden="true"><strong>BGFI</strong><span>Lisolo</span></span>
+    </a>
+    <button class="drawer-close" type="button" id="drawerClose" aria-label="Fermer le sommaire"></button>
+  </div>
+
+  <div class="drawer-body">
+    <span class="drawer-label">Sommaire · N°01 · S1 <b>2026</b></span>
+
+    <nav class="drawer-nav" aria-label="Chapitres">
+      <a class="drawer-link" href="#chapitre-1" style="--i:0"><span class="drawer-num">I</span><span class="drawer-title">Édito du Directeur Général</span></a>
+      <a class="drawer-link" href="#chapitre-2" style="--i:1"><span class="drawer-num">II</span><span class="drawer-title">Indicateurs clés — <em>Juin 2026</em></span></a>
+      <a class="drawer-link" href="#chapitre-3" style="--i:2"><span class="drawer-num">III</span><span class="drawer-title">Vie sociale et institutionnelle</span></a>
+      <a class="drawer-link" href="#chapitre-4" style="--i:3"><span class="drawer-num">IV</span><span class="drawer-title">Innovation projets structurants</span></a>
+      <a class="drawer-link" href="#chapitre-5" style="--i:4"><span class="drawer-num">V</span><span class="drawer-title">BGFI s'engage &amp; culture d'entreprise</span></a>
+      <a class="drawer-link" href="#chapitre-6" style="--i:5"><span class="drawer-num">VI</span><span class="drawer-title">Valeurs &amp; témoignages</span></a>
+      <a class="drawer-link" href="#chapitre-7" style="--i:6"><span class="drawer-num">VII</span><span class="drawer-title">Formation — <em>développement des talents</em></span></a>
+      <a class="drawer-link" href="#chapitre-8" style="--i:7"><span class="drawer-num">VIII</span><span class="drawer-title">Naissances et mariages</span></a>
+      <a class="drawer-link" href="#agenda"     style="--i:8"><span class="drawer-num">·</span><span class="drawer-title">Chronologie du semestre</span></a>
+      <a class="drawer-link" href="#abonnement" style="--i:9"><span class="drawer-num">·</span><span class="drawer-title">Abonnement</span></a>
+    </nav>
+  </div>
+
+  <div class="drawer-foot">
+    <a href="#abonnement" class="drawer-cta" data-drawer-close>
+      <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+      Recevoir le prochain numéro
+    </a>
+    <p class="drawer-meta">Deux numéros par an · sans publicité</p>
+  </div>
+</aside>
+
+<!-- ============================================================
+     HERO — Immersive cover (v5 — optimized composition)
+     Anchor: star @ 70/34 desktop · 50/21 mobile
+     Animated background: single system, responsive for both
+     ============================================================ -->
+<section class="hero" id="hero" data-hero="v5">
+  <div class="hero-bg" aria-hidden="true">
+
+    <!-- Base cinematic gradient (deep space) -->
+    <div class="hero-gradient"></div>
+
+    <!-- Atmospheric gradient layer; intentionally asset-free for instant loading. -->
+    <div class="hero-video-wrap hero-video-wrap--ambient" aria-hidden="true"></div>
+
+    <!-- Text-safe fade — protects typography from bright elements -->
+    <div class="hero-safe-veil"></div>
+
+    <!-- Nebula reinforcement (bottom-right anchor, both breakpoints) -->
+    <div class="hero-nebula"></div>
+
+    <!-- Grain / noise for cinematic finish -->
+    <div class="hero-noise"></div>
+
+    <!-- Editorial curves (kept, muted opacity so they don't fight the star) -->
+    <svg class="hero-curves" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="heroG1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#9db49a" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#c2d2bc" stop-opacity=".38"/>
+          <stop offset="100%" stop-color="#9db49a" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="heroG2" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#ffffff" stop-opacity=".14"/>
+          <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path class="hero-curve" d="M-40,720 C 260,540 520,300 900,320 C 1220,340 1420,220 1700,140" fill="none" stroke="url(#heroG1)" stroke-width="1.5"/>
+      <path class="hero-curve hero-curve--2" d="M-40,840 C 260,720 520,540 900,540 C 1220,540 1420,440 1700,340" fill="none" stroke="url(#heroG1)" stroke-width="1"/>
+      <path class="hero-curve hero-curve--3" d="M-40,240 C 260,120 520,80 900,200" fill="none" stroke="url(#heroG2)" stroke-width=".8"/>
+    </svg>
+
+    <!-- Twinkle starfield (density-faded away from text safe area) -->
+    <div class="hero-stars" id="heroStars"></div>
+
+    <!-- ==========================================================
+         ORBITAL SYSTEM — the BGFI mark as a turning medallion,
+         wrapped in transparent rings travelled by white BGFI stars.
+         Rings are split across two canvases so the far arcs pass
+         BEHIND the mark and the near arcs IN FRONT of it.
+         ========================================================== -->
+    <div class="hero-orbit" id="heroOrbit">
+      <div class="orbit-stage">
+        <canvas class="orbit-canvas orbit-canvas--back"></canvas>
+
+        <div class="orbit-core">
+          <span class="orbit-aura"></span>
+          <span class="orbit-halo"></span>
+          <span class="orbit-plate"></span>
+          <div class="orbit-logo-spin">
+            <img src="images/logo-mark.png" alt="" class="orbit-logo" width="517" height="494" decoding="async">
+            <span class="orbit-logo-specular"></span>
+            <span class="orbit-logo-sheen"></span>
+          </div>
+        </div>
+
+        <canvas class="orbit-canvas orbit-canvas--front"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-frame">
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal-up">
+        <span class="bgfi-star bgfi-star--xs"></span>
+        <span>BGFI Lisolo - Édition N°1 - Juin 2026​</span>
+        <span class="bgfi-star bgfi-star--xs"></span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="hero-line reveal-up" style="--rd:.05s">Le semestre</span>
+        <span class="hero-line reveal-up" style="--rd:.15s">où nos <em class="gold-em">ambitions</em></span>
+        <span class="hero-line reveal-up" style="--rd:.25s">prennent la forme</span>
+        <span class="hero-line reveal-up" style="--rd:.35s"><em class="serif-ital">de l'avenir.</em></span>
+      </h1>
+
+      <div class="hero-underline reveal-up" style="--rd:.45s">
+        <span class="hero-underline-bar"></span>
+        <span class="bgfi-star bgfi-star--sm"></span>
+        <span class="hero-underline-bar"></span>
+      </div>
+
+      <p class="hero-subtitle reveal-up" style="--rd:.55s">
+        Bienvenue dans le premier numéro de l'année&nbsp;: le lancement officiel du projet
+        <strong>BGFI 30-BRD 28​</strong>, une performance record, de nouveaux territoires conquis
+        et une transformation digitale qui s'accélère.
+      </p>
+
+      <div class="hero-meta reveal-up" style="--rd:.65s">
+        <div class="meta-block">
+          <span class="meta-label">Édition</span>
+          <span class="meta-value">Janvier — Juin 2026</span>
+        </div>
+        <div class="meta-divider"><span class="bgfi-star bgfi-star--xs"></span></div>
+      </div>
+
+      <a href="#edito" class="hero-cta reveal-up" style="--rd:.75s">
+        <span class="cta-inner">
+          <span class="cta-label">Commencer la lecture</span>
+          <span class="cta-arrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </span>
+        </span>
+        <span class="cta-glow" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span class="hero-scroll-label">Scroll</span>
+    <span class="hero-scroll-line"></span>
+  </div>
+</section>
+
+<!-- ============================================================
+     COVER STRIP — Magazine masthead / edition line
+     ============================================================ -->
+<section class="masthead-strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Excellence</span><span class="bgfi-star bgfi-star--xs"></span>
+    <span>Confiance</span><span class="bgfi-star bgfi-star--xs"></span>
+    <span>Innovation</span><span class="bgfi-star bgfi-star--xs"></span>
+    <span>Prestige</span><span class="bgfi-star bgfi-star--xs"></span>
+    <span>BGFI 30</span><span class="bgfi-star bgfi-star--xs"></span>
+    <span>Semestre 1 · 2026</span><span class="bgfi-star bgfi-star--xs"></span>
+    <span>Excellence</span><span class="bgfi-star bgfi-star--xs"></span>
+    <span>Confiance</span><span class="bgfi-star bgfi-star--xs"></span>
+    <span>Innovation</span><span class="bgfi-star bgfi-star--xs"></span>
+    <span>Prestige</span><span class="bgfi-star bgfi-star--xs"></span>
+    <span>BGFI 30</span><span class="bgfi-star bgfi-star--xs"></span>
+    <span>Semestre 1 · 2026</span><span class="bgfi-star bgfi-star--xs"></span>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOMMAIRE — Editorial index
+     ============================================================ -->
+<section class="summary-section" id="chapitres">
+  <div class="section-decor" aria-hidden="true">
+    <span class="bgfi-star bgfi-star--lg decor-star decor-star--tl"></span>
+    <span class="bgfi-star bgfi-star--md decor-star decor-star--br"></span>
+  </div>
+  <div class="container reveal-up">
+    <div class="section-eyebrow">
+      <span class="line"></span>
+      <span class="eyebrow-text"><span class="bgfi-star bgfi-star--xs"></span> Sommaire du numéro <span class="bgfi-star bgfi-star--xs"></span></span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title center">Six mois, une seule direction&nbsp;: <em>l'excellence.</em></h2>
+    <p class="section-lead center">
+      Un tour d'horizon éditorial des chapitres de ce semestre — pensé pour être lu comme un magazine, vécu comme un carnet de bord.
+    </p>
+
+    <div class="summary-grid">
+      <a href="#edito" class="summary-card reveal-up" style="--rd:.05s">
+        <span class="summary-num">01</span>
+        <span class="summary-star" aria-hidden="true"><span class="bgfi-star bgfi-star--xs"></span></span>
+        <span class="summary-title">Édito du DG</span>
+        <span class="summary-desc">Cap sur BGFI 30, la vision qui redessine notre horizon.</span>
+        <span class="summary-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="#indicateurs" class="summary-card reveal-up" style="--rd:.1s">
+        <span class="summary-num">02</span>
+        <span class="summary-star" aria-hidden="true"><span class="bgfi-star bgfi-star--xs"></span></span>
+        <span class="summary-title">Nos Indicateurs</span>
+        <span class="summary-desc">Les chiffres clés de fin 2025, socle de nos ambitions 2026.</span>
+        <span class="summary-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="#story-education" class="summary-card reveal-up" style="--rd:.15s">
+        <span class="summary-num">03</span>
+        <span class="summary-star" aria-hidden="true"><span class="bgfi-star bgfi-star--xs"></span></span>
+        <span class="summary-title">Partenariats Éducatifs</span>
+        <span class="summary-desc">BBS à Kananga&nbsp;: construire les talents de demain.</span>
+        <span class="summary-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="#story-abidjan" class="summary-card reveal-up" style="--rd:.2s">
+        <span class="summary-num">04</span>
+        <span class="summary-star" aria-hidden="true"><span class="bgfi-star bgfi-star--xs"></span></span>
+        <span class="summary-title">Séminaire Abidjan</span>
+        <span class="summary-desc">Capital Humain &amp; Communication — BGFI 2030 en marche.</span>
+        <span class="summary-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="#story-perf" class="summary-card reveal-up" style="--rd:.25s">
+        <span class="summary-num">05</span>
+        <span class="summary-star" aria-hidden="true"><span class="bgfi-star bgfi-star--xs"></span></span>
+        <span class="summary-title">Performance 2025</span>
+        <span class="summary-desc">PNB de 51,160 milliards FC — une année de records.</span>
+        <span class="summary-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="#story-kbm" class="summary-card reveal-up" style="--rd:.3s">
+        <span class="summary-num">06</span>
+        <span class="summary-star" aria-hidden="true"><span class="bgfi-star bgfi-star--xs"></span></span>
+        <span class="summary-title">Katanga Business Meeting</span>
+        <span class="summary-desc">BGFIMines FLEX au cœur du KBM 2026 à Kolwezi.</span>
+        <span class="summary-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="#story-rakka" class="summary-card reveal-up" style="--rd:.35s">
+        <span class="summary-num">07</span>
+        <span class="summary-star" aria-hidden="true"><span class="bgfi-star bgfi-star--xs"></span></span>
+        <span class="summary-title">RakkaCash V2</span>
+        <span class="summary-desc">L'argent en USD et CDF, réinventé pour vous.</span>
+        <span class="summary-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="#story-tour" class="summary-card reveal-up" style="--rd:.4s">
+        <span class="summary-num">08</span>
+        <span class="summary-star" aria-hidden="true"><span class="bgfi-star bgfi-star--xs"></span></span>
+        <span class="summary-title">BGFI Tour 2026</span>
+        <span class="summary-desc">Le golf, terrain de rencontres et d'opportunités.</span>
+        <span class="summary-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPITRE I · Édito du Directeur Général
+     ============================================================ -->
+<section class="chapitre-divider chapitre-divider--parchment" id="chapitre-1" aria-labelledby="chapitre-1-title">
+  <div class="cd-canvas" aria-hidden="true">
+    <span class="cd-wash"></span>
+    <span class="cd-mesh"></span>
+    <span class="cd-grain"></span>
+    <span class="cd-figure"></span>
+    <span class="cd-numeral-ghost">I</span>
+    <span class="cd-spark cd-spark--a"></span>
+    <span class="cd-spark cd-spark--b"></span>
+    <span class="cd-spark cd-spark--c"></span>
+  </div>
+
+  <div class="container cd-inner">
+    <p class="cd-kicker reveal-up">
+      <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+      <span class="cd-kicker-text">Chapitre I</span>
+      <span class="cd-kicker-rule" aria-hidden="true"></span>
+      <span class="cd-kicker-count">1 / 8</span>
+    </p>
+
+    <div class="cd-head">
+      <span class="cd-numeral reveal-up" aria-hidden="true">I</span> 
+      <div class="cd-headings">
+        <h2 class="cd-title reveal-up" id="chapitre-1-title" style="--rd:.06s">Édito de <em>la direction Générale</em></h2>
+        <p class="cd-standfirst reveal-up" style="--rd:.12s">Le mot d’ouverture du numéro&nbsp;: une étape importante dans notre histoire commune.</p>
+      </div>
+    </div>
+
+    <div class="cd-rule reveal-up" style="--rd:.16s" aria-hidden="true">
+      <span class="cd-rule-line"></span>
+      <span class="bgfi-star bgfi-star--sm"></span>
+      <span class="cd-rule-line"></span>
+    </div>
+
+    <div class="cd-foot reveal-up" style="--rd:.2s">
+      <ul class="cd-list" aria-label="Au sommaire de ce chapitre">
+        <li class="cd-item"><a href="#edito"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Édito du Directeur Général</span><span class="cd-item-date">Juin 2026</span></a></li>
+      </ul>
+      <p class="cd-dateline"><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Ouverture du numéro · BGFI Lisolo N°01</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ÉDITO — Mot du Directeur Général (Premium editorial)
+     ============================================================ -->
+<section class="edito-section" id="edito" aria-labelledby="edito-title">
+  <div class="edito-canvas" aria-hidden="true">
+    <span class="edito-glow edito-glow--gold"></span>
+    <span class="edito-glow edito-glow--blue"></span>
+    <span class="edito-grain"></span>
+
+    <svg class="edito-curves" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" focusable="false">
+      <defs>
+        <linearGradient id="editoCurveGold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#d6e5b4" stop-opacity="0"/>
+          <stop offset="45%" stop-color="#d6e5b4" stop-opacity=".5"/>
+          <stop offset="100%" stop-color="#d6e5b4" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="editoCurveBlue" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#7fa8dd" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#7fa8dd" stop-opacity=".3"/>
+          <stop offset="100%" stop-color="#7fa8dd" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path class="edito-curve-path" d="M-40,720 C 260,540 420,300 700,250 C 980,200 1180,330 1500,190" fill="none" stroke="url(#editoCurveGold)" stroke-width="1.25"/>
+      <path class="edito-curve-path edito-curve-path--2" d="M-40,830 C 320,700 470,470 780,410 C 1090,350 1240,470 1500,330" fill="none" stroke="url(#editoCurveGold)" stroke-width="1"/>
+      <path class="edito-curve-path edito-curve-path--3" d="M-40,300 C 200,180 380,80 640,120" fill="none" stroke="url(#editoCurveBlue)" stroke-width="1"/>
+    </svg>
+
+    <span class="float-star" data-depth="0.16" style="--fx:6%;  --fy:12%; --fs:30px; --fd:0s;    --fo:.20"></span>
+    <span class="float-star" data-depth="0.28" style="--fx:22%; --fy:76%; --fs:16px; --fd:-3.5s; --fo:.26"></span>
+    <span class="float-star" data-depth="0.10" style="--fx:47%; --fy:6%;  --fs:12px; --fd:-1.8s; --fo:.18"></span>
+    <span class="float-star" data-depth="0.34" style="--fx:88%; --fy:22%; --fs:24px; --fd:-5s;   --fo:.22"></span>
+    <span class="float-star" data-depth="0.20" style="--fx:94%; --fy:64%; --fs:14px; --fd:-2.4s; --fo:.24"></span>
+    <span class="float-star" data-depth="0.24" style="--fx:70%; --fy:92%; --fs:19px; --fd:-6.2s; --fo:.16"></span>
+  </div>
+
+  <div class="container edito-shell">
+    <header class="edito-masthead reveal-up">
+      <p class="edito-kicker">Édito de l’Administrateur Directeur Général</p>
+      <p class="edito-label">
+        <span class="edito-label-dash" aria-hidden="true"></span>
+        <span class="edito-label-text">Message d'ouverture</span>
+        <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+      </p>
+    </header>
+
+    <div class="edito-grid">
+      <div class="edito-portrait-col reveal-up" data-reveal-delay="0">
+        <figure class="portrait-composition" data-parallax-portrait>
+          <span class="pc-halo" aria-hidden="true"></span>
+          <span class="pc-ring pc-ring--outer" aria-hidden="true"></span>
+          <span class="pc-ring pc-ring--inner" aria-hidden="true"></span>
+          <span class="pc-arc" aria-hidden="true"></span>
+          <span class="pc-glowstar pc-glowstar--a" aria-hidden="true"></span>
+          <span class="pc-glowstar pc-glowstar--b" aria-hidden="true"></span>
+
+          <div class="pc-frame">
+            <picture>
+              <source type="image/webp" srcset="images/dg-portrait-560.webp 560w, images/dg-portrait.webp 900w" sizes="(max-width: 640px) 78vw, (max-width: 1024px) 46vw, 34vw">
+              <img class="pc-img" src="images/dg-portrait.jpg" srcset="images/dg-portrait-560.jpg 560w, images/dg-portrait.jpg 900w" sizes="(max-width: 640px) 78vw, (max-width: 1024px) 46vw, 34vw" width="900" height="900" loading="lazy" decoding="async" alt="Portrait du Directeur Général de BGFIBank RDC, en costume bleu marine, souriant.">
+            </picture>
+            <span class="pc-veil" aria-hidden="true"></span>
+            <span class="pc-sheen" aria-hidden="true"></span>
+          </div>
+
+          <span class="bgfi-star pc-corner pc-corner--tl" aria-hidden="true"></span>
+          <span class="bgfi-star pc-corner pc-corner--br" aria-hidden="true"></span>
+
+          <figcaption class="pc-plate">
+            <span class="pc-plate-star bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+            <span class="pc-plate-text">
+              <span class="pc-plate-name">Francesco DE MUSSO</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <p class="edito-label edito-label--mobile">
+          <span class="edito-label-dash" aria-hidden="true"></span>
+          <span class="edito-label-text">Message d'ouverture</span>
+          <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+        </p>
+
+        <div class="edito-aside">
+          <div class="edito-aside-row">
+            <span class="edito-aside-value">2025</span>
+            <span class="edito-aside-label">Une année de résultats</span>
+          </div>
+          <span class="edito-aside-rule" aria-hidden="true"></span>
+          <div class="edito-aside-row">
+            <span class="edito-aside-value">15<i>ans</i></span>
+            <span class="edito-aside-label">De présence en RDC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="edito-body">
+        <h2 class="edito-title reveal-up" id="edito-title" data-reveal-delay="60">
+          Une étape importante dans<br/><em>notre histoire commune.</em>
+        </h2>
+
+        <div class="edito-divider reveal-up" data-reveal-delay="120" aria-hidden="true">
+          <span class="edito-divider-line"></span>
+          <span class="bgfi-star bgfi-star--sm edito-divider-star"></span>
+          <span class="edito-divider-line"></span>
+        </div>
+
+        <div class="edito-prose">
+          <p class="edito-lead reveal-up" data-reveal-delay="180">
+            <span class="dropcap" aria-hidden="true">L</span><span class="sr-only">L</span>'année 2025 marque une étape importante dans l'histoire de <strong>BGFIBank RDC</strong>. Grâce à l'engagement collectif de nos collaborateurs, à la confiance renouvelée de nos clients et à la solidité de notre vision stratégique, notre banque a enregistré d'excellents résultats financiers, confirmant ainsi la pertinence des orientations engagées ces dernières années.
+          </p>
+
+          <figure class="edito-pullquote reveal-up" data-reveal-delay="230">
+            <figcaption class="edito-pullquote-label">
+              <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+              <span>Citation clé</span>
+            </figcaption>
+            <blockquote class="edito-pullquote-text">
+              «&nbsp;Cette dynamique de croissance s'est accompagnée d'initiatives fortes en faveur de l'innovation, de la proximité client et du bien-être de nos équipes.&nbsp;»
+            </blockquote>
+          </figure>
+
+          <p class="reveal-up" data-reveal-delay="280">
+            Le lancement du concept «&nbsp;<strong>BGFINight</strong>&nbsp;», la modernisation de nos outils RH avec <strong>HR Access</strong>, le développement des compétences à travers des formations certifiantes, ainsi que les nombreuses actions sociales et de prévention menées tout au long de l'année, traduisent notre volonté de construire une banque <em class="gold-em">performante, humaine et durable</em>.
+          </p>
+          <p class="reveal-up" data-reveal-delay="320">
+            En célébrant l’an passé nos <strong>15 ans de présence</strong> en République Démocratique du Congo, nous mesurons le chemin parcouru et regardons l'avenir avec ambition et confiance. À toutes et à tous, je tiens à exprimer ma profonde gratitude pour votre engagement quotidien. Ensemble, continuons à faire vivre nos valeurs et à bâtir le meilleur pour BGFIBank RDC.
+          </p>
+
+        </div>
+
+        <div class="edito-signature reveal-up" data-reveal-delay="380">
+          <span class="signature-line" aria-hidden="true"></span>
+          <div class="signature-block">
+            <p class="signature-name">Francesco DE MUSSO</p>
+            <p class="signature-role">Administrateur Directeur Général</p>
+          </div>
+          <span class="bgfi-star bgfi-star--sm signature-star" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPITRE II · Indicateurs clés — Juin 2026
+     ============================================================ -->
+<section class="chapitre-divider chapitre-divider--data" id="chapitre-2" aria-labelledby="chapitre-2-title">
+  <div class="cd-canvas" aria-hidden="true">
+    <span class="cd-wash"></span>
+    <span class="cd-mesh"></span>
+    <span class="cd-grain"></span>
+    <span class="cd-figure"></span>
+    <span class="cd-numeral-ghost">II</span>
+    <span class="cd-spark cd-spark--a"></span>
+    <span class="cd-spark cd-spark--b"></span>
+    <span class="cd-spark cd-spark--c"></span>
+  </div>
+
+  <div class="container cd-inner">
+    <p class="cd-kicker reveal-up">
+      <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+      <span class="cd-kicker-text">Chapitre II</span>
+      <span class="cd-kicker-rule" aria-hidden="true"></span>
+      <span class="cd-kicker-count">2 / 8</span>
+    </p>
+
+    <div class="cd-head">
+      <span class="cd-numeral reveal-up" aria-hidden="true">II</span>
+      <div class="cd-headings">
+        <h2 class="cd-title reveal-up" id="chapitre-2-title" style="--rd:.06s">Indicateurs clés<br/><em>Juin 2026</em></h2>
+        <p class="cd-standfirst reveal-up" style="--rd:.12s">La performance en chiffres, et l’empreinte humaine qui la porte.</p>
+      </div>
+    </div>
+
+    <div class="cd-rule reveal-up" style="--rd:.16s" aria-hidden="true">
+      <span class="cd-rule-line"></span>
+      <span class="bgfi-star bgfi-star--sm"></span>
+      <span class="cd-rule-line"></span>
+    </div>
+
+    <div class="cd-foot reveal-up" style="--rd:.2s">
+      <ul class="cd-list" aria-label="Au sommaire de ce chapitre">
+        <li class="cd-item"><a href="#indicateurs"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Nos indicateurs · la performance en chiffres</span><span class="cd-item-date">Fin 2025</span></a></li>
+        <li class="cd-item"><a href="#indicateurs"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Notre empreinte en RDC</span><span class="cd-item-date">Semestre 1 · 2026</span></a></li>
+      </ul>
+      <p class="cd-dateline"><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Le socle chiffré du semestre</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INDICATEURS — Full-bleed statistic banner
+     ============================================================ -->
+<section class="indicators-section" id="indicateurs">
+  <div class="indicators-bg" aria-hidden="true">
+    <span class="ind-orb ind-orb--a"></span>
+    <span class="ind-orb ind-orb--b"></span>
+    <span class="ind-orb ind-orb--c"></span>
+    <span class="bgfi-star bgfi-star--xl indicators-decor-star"></span>
+    <span class="indicator-float-star" style="--x:7%;--y:18%;--s:9px;--d:-1s;--t:7s"></span>
+    <span class="indicator-float-star" style="--x:16%;--y:72%;--s:15px;--d:-4s;--t:10s"></span>
+    <span class="indicator-float-star" style="--x:31%;--y:11%;--s:7px;--d:-2s;--t:8s"></span>
+    <span class="indicator-float-star" style="--x:44%;--y:82%;--s:11px;--d:-6s;--t:12s"></span>
+    <span class="indicator-float-star" style="--x:58%;--y:21%;--s:13px;--d:-3s;--t:9s"></span>
+    <span class="indicator-float-star" style="--x:72%;--y:68%;--s:8px;--d:-5s;--t:11s"></span>
+    <span class="indicator-float-star" style="--x:84%;--y:16%;--s:17px;--d:-7s;--t:13s"></span>
+    <span class="indicator-float-star" style="--x:94%;--y:54%;--s:9px;--d:-2.5s;--t:8s"></span>
+  </div>
+  <div class="container reveal-up">
+    <div class="section-eyebrow center light">
+      <span class="line"></span>
+      <span class="eyebrow-text"><span class="bgfi-star bgfi-star--xs"></span> Nos indicateurs · fin 2025 <span class="bgfi-star bgfi-star--xs"></span></span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title center light">Des chiffres qui racontent notre engagement <em>et nos performances</em></h2>
+    <p class="section-lead center light">
+      Au-delà de la performance, des actions concrètes pour nos équipes, nos familles et notre territoire —
+      le socle solide sur lequel se construit la vision 2026 et l'élan de notre projet BGFI 30.
+    </p>
+
+    <div class="indicators-grid indicators-grid--trio">
+      <!-- 01 · 15 ans -->
+      <div class="indicator-card reveal-up" style="--rd:.05s">
+        <div class="indicator-inner">
+          <span class="indicator-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v4m0 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 10v4M5 12H3m18 0h-2M6.3 6.3 4.9 4.9m14.2 1.4 1.4-1.4"/></svg>
+          </span>
+          <div class="indicator-value" data-target="15" data-suffix="">15</div>
+          <div class="indicator-unit">années</div>
+          <div class="indicator-label">De présence en République<br/>Démocratique du Congo</div>
+          <div class="indicator-note">BGFIBank RDC · depuis 2011</div>
+          <div class="indicator-bar"><span style="--w:100%"></span></div>
+        </div>
+      </div>
+
+      <!-- 02 · 55 % -->
+      <div class="indicator-card reveal-up" style="--rd:.12s">
+        <div class="indicator-inner">
+          <span class="indicator-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3.5 20c.4-4 2.2-6 5.5-6s5.1 2 5.5 6M15 14c3.4 0 5 1.7 5.5 5"/></svg>
+          </span>
+          <div class="indicator-value" data-target="55" data-suffix=" %">55 %</div>
+          <div class="indicator-unit">de femmes</div>
+          <div class="indicator-label">La parité au sein du Conseil<br/>d’Administration</div>
+          <div class="indicator-note">BGFIBank RDC SA</div>
+          <div class="indicator-bar"><span style="--w:55%"></span></div>
+        </div>
+      </div>
+
+      <!-- 03 · 455 actions de formation -->
+      <div class="indicator-card reveal-up" style="--rd:.19s">
+        <div class="indicator-inner">
+          <span class="indicator-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="m3 10 9-5 9 5-9 5-9-5Z"/><path d="M7 12.5V17c3 2 7 2 10 0v-4.5M21 10v6"/></svg>
+          </span>
+          <div class="indicator-value" data-target="455" data-suffix="+">455+</div>
+          <div class="indicator-unit">actions de formation</div>
+          <div class="indicator-label">100 % de la population BGFIBank RDC<br/>formée en 2025</div>
+          <div class="indicator-note">au moins une formation · 2025</div>
+          <div class="indicator-bar"><span style="--w:100%"></span></div>
+        </div>
+      </div>
+
+      <!-- 04 · 0 % -->
+      <div class="indicator-card reveal-up" style="--rd:.26s">
+        <div class="indicator-inner">
+          <span class="indicator-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 4v5h5M8 13h8M8 16.5h5"/></svg>
+          </span>
+          <div class="indicator-value" data-target="0" data-suffix=" %">0 %</div>
+          <div class="indicator-unit">taux prêts scolaires</div>
+          <div class="indicator-label">Soutien scolaire à taux zéro<br/>pour les familles BGFIBank RDC</div>
+          <div class="indicator-note">Prêts scolaires · sans intérêt</div>
+          <div class="indicator-bar"><span style="--w:100%"></span></div>
+        </div>
+      </div>
+
+      <!-- 05 · 92 % -->
+      <div class="indicator-card reveal-up" style="--rd:.33s">
+        <div class="indicator-inner">
+          <span class="indicator-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8"/><path d="m8.5 12 2.2 2.2 4.8-5"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2"/></svg>
+          </span>
+          <div class="indicator-value" data-target="92" data-suffix=" %">92 %</div>
+          <div class="indicator-unit">de réalisation</div>
+          <div class="indicator-label">Réalisation projet<br/>Mbotama Ya Sika</div>
+          <div class="indicator-note">clôture au niveau local</div>
+          <div class="indicator-bar"><span style="--w:92%"></span></div>
+        </div>
+      </div>
+
+      <!-- 06 · 51,16 -->
+      <div class="indicator-card reveal-up" style="--rd:.4s">
+        <div class="indicator-inner">
+          <span class="indicator-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 10h18M5 10v8m4-8v8m6-8v8m4-8v8M3 21h18M12 3l9 5H3l9-5Z"/></svg>
+          </span>
+          <div class="indicator-value" data-target="51.16" data-suffix="">51,16</div>
+          <div class="indicator-unit">M USD</div>
+          <div class="indicator-label">Produit Net Bancaire<br/>2025</div>
+          <div class="indicator-note">39,467 M budgétés</div>
+          <div class="indicator-bar"><span style="--w:100%"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chute remontée depuis #story-perf (« A remonter au niveau des indicateurs ») -->
+    <p class="indicators-outro reveal-up" style="--rd:.48s">
+      <em>Une année qui pose les fondations — et une décennie qui s'ouvre.</em>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPITRE III · Vie sociale et institutionnelle
+     ============================================================ -->
+<section class="chapitre-divider chapitre-divider--editorial" id="chapitre-3" aria-labelledby="chapitre-3-title">
+  <div class="cd-canvas" aria-hidden="true">
+    <span class="cd-wash"></span>
+    <span class="cd-mesh"></span>
+    <span class="cd-grain"></span>
+    <span class="cd-figure"></span>
+    <span class="cd-numeral-ghost">III</span>
+    <span class="cd-spark cd-spark--a"></span>
+    <span class="cd-spark cd-spark--b"></span>
+    <span class="cd-spark cd-spark--c"></span>
+  </div>
+
+  <div class="container cd-inner">
+    <p class="cd-kicker reveal-up">
+      <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+      <span class="cd-kicker-text">Chapitre III</span>
+      <span class="cd-kicker-rule" aria-hidden="true"></span>
+      <span class="cd-kicker-count">3 / 8</span>
+    </p>
+
+    <div class="cd-head">
+      <span class="cd-numeral reveal-up" aria-hidden="true">III</span>
+      <div class="cd-headings">
+        <h2 class="cd-title reveal-up" id="chapitre-3-title" style="--rd:.06s">Vie sociale <em>et institutionnelle</em></h2>
+        <p class="cd-standfirst reveal-up" style="--rd:.12s">Six mois de rendez-vous, de missions et de présences qui ont fait vivre la banque — de Kinshasa au Cap, de Brazzaville à Lubumbashi.</p>
+      </div>
+    </div>
+
+    <div class="cd-rule reveal-up" style="--rd:.16s" aria-hidden="true">
+      <span class="cd-rule-line"></span>
+      <span class="bgfi-star bgfi-star--sm"></span>
+      <span class="cd-rule-line"></span>
+    </div>
+
+    <div class="cd-foot reveal-up" style="--rd:.2s">
+      <ul class="cd-list" aria-label="Au sommaire de ce chapitre">
+        <li class="cd-item"><a href="#story-social"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Échange de vœux — Nous‑Mêmes</span><span class="cd-item-date">03 Janvier 2026</span></a></li>
+        <li class="cd-item"><a href="#retraite-strategique"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Retraite stratégique à Brazzaville</span><span class="cd-item-date">Janvier 2026</span></a></li>
+        <li class="cd-item"><a href="#indaba-2026"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Participation à INDABA</span><span class="cd-item-date">9 au 12 Février 2026</span></a></li>
+        <li class="cd-item"><a href="#story-abidjan"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Séminaire Capital Humain et Communication 2026</span><span class="cd-item-date">Du 03 au 06 mars 2026</span></a></li>
+        <li class="cd-item"><a href="#story-perf"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Réunion du personnel · performance &amp; ambitions</span><span class="cd-item-date">20 mars 2026</span></a></li>
+        <li class="cd-item"><a href="#story-banques"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Mission auprès de nos banques correspondantes</span><span class="cd-item-date">22 mars au 4 avril 2026</span></a></li>
+        <li class="cd-item"><a href="#story-kbm"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Participation au KBM</span><span class="cd-item-date">Du 20 au 22 mai 2026</span></a></li>
+        <li class="cd-item"><a href="#story-tour-variation-1"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">BGFI Tour</span><span class="cd-item-date">6 juin 2026</span></a></li>
+        <li class="cd-item"><a href="#story-mining"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">DRC Mining</span><span class="cd-item-date">Du 11 au 13 Juin 2026</span></a></li>
+      </ul>
+      <p class="cd-dateline"><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Neuf temps forts · Janvier — Juin 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER OPENER — Nous-mêmes (Editorial full-bleed)
+     ============================================================ -->
+<section class="chapter-opener" id="story-social" aria-labelledby="chapter-social-title">
+  <div class="chapter-shell">
+
+    <header class="chapter-head reveal-up">
+      <div class="chapter-head-main">
+        <p class="chapter-eyebrow">
+          <span class="bgfi-star bgfi-star--sm" aria-hidden="true"></span>
+          <span>Chapitre III · Vie sociale &amp; institutionnelle</span>
+          <span class="chapter-eyebrow-rule" aria-hidden="true"></span>
+        </p>
+        <h2 class="chapter-title" id="chapter-social-title">
+          Échange de<br/><em>Vœux 2026</em>
+        </h2>
+      </div>
+      <div class="chapter-datebox">
+        <span class="chapter-datebox-date">03 Janvier 2026</span>
+        <span class="chapter-datebox-place">Hôtel Hilton · Kinshasa</span>
+      </div>
+    </header>
+
+    <div class="chapter-layout">
+
+      <div class="chapter-slider reveal-up" data-chapter-slider data-interval="5500">
+        <span class="bgfi-star chapter-slider-star chapter-slider-star--tl" aria-hidden="true"></span>
+        <span class="bgfi-star chapter-slider-star chapter-slider-star--br" aria-hidden="true"></span>
+
+        <div class="chapter-slides" data-chapter-track aria-live="polite">
+          <figure class="chapter-slide is-active" data-chapter-slide role="group" aria-roledescription="diapositive" aria-label="1 sur 4">
+            <img src="images/voeux-01.jpg" alt="Découpe du gâteau des 15 ans de BGFIBank RDC lors de la cérémonie d'échange de vœux." width="1024" height="683" loading="lazy" decoding="async">
+            <span class="chapter-slide-veil" aria-hidden="true"></span>
+            <figcaption class="chapter-slide-caption">
+              <span class="bgfi-star" aria-hidden="true"></span>
+              <span>15 ans BGFIBank RDC · le gâteau anniversaire</span>
+            </figcaption>
+          </figure>
+
+          <figure class="chapter-slide" data-chapter-slide role="group" aria-roledescription="diapositive" aria-label="2 sur 4">
+            <img src="images/voeux-02.jpg" alt="Trophées « 15 ans » décernés aux collaborateurs pour leur contribution exceptionnelle et durable." width="731" height="1024" loading="lazy" decoding="async">
+            <span class="chapter-slide-veil" aria-hidden="true"></span>
+            <figcaption class="chapter-slide-caption">
+              <span class="bgfi-star" aria-hidden="true"></span>
+              <span>Trophées d'ancienneté · 5, 10 et 15 ans</span>
+            </figcaption>
+          </figure>
+
+          <figure class="chapter-slide" data-chapter-slide role="group" aria-roledescription="diapositive" aria-label="3 sur 4">
+            <img src="images/voeux-03.jpg" alt="Les collaborateurs de BGFIBank RDC réunis en tenue commune lors de la cérémonie d'ouverture." width="1024" height="683" loading="lazy" decoding="async">
+            <span class="chapter-slide-veil" aria-hidden="true"></span>
+            <figcaption class="chapter-slide-caption">
+              <span class="bgfi-star" aria-hidden="true"></span>
+              <span>« Nous‑Mêmes, Nous‑Mêmes » · 120 collaborateurs</span>
+            </figcaption>
+          </figure>
+
+          <figure class="chapter-slide chapter-slide--contain" data-chapter-slide role="group" aria-roledescription="diapositive" aria-label="4 sur 4">
+            <img src="images/2026/voeux20252026.jpg" alt="Annonce de la participation de BGFIBank RDC à Investing in African Mining Indaba, du 9 au 12 février 2026 au Cap." width="997" height="957" loading="lazy" decoding="async">
+            <span class="chapter-slide-veil" aria-hidden="true"></span>
+            <figcaption class="chapter-slide-caption">
+              <span class="bgfi-star" aria-hidden="true"></span>
+              <span>Cap sur 2026 · une année d'ambition collective</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="chapter-slider-bar">
+          <div class="chapter-dots" role="tablist" aria-label="Choisir une photo">
+            <button class="chapter-dot" type="button" role="tab" aria-selected="true"  aria-label="Photo 1"></button>
+            <button class="chapter-dot" type="button" role="tab" aria-selected="false" aria-label="Photo 2"></button>
+            <button class="chapter-dot" type="button" role="tab" aria-selected="false" aria-label="Photo 3"></button>
+            <button class="chapter-dot" type="button" role="tab" aria-selected="false" aria-label="Photo 4"></button>
+          </div>
+          <span class="chapter-counter" aria-hidden="true"><b data-chapter-current>01</b> / 04</span>
+          <div class="chapter-arrows">
+            <button class="chapter-arrow" type="button" data-chapter-prev aria-label="Photo précédente">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <button class="chapter-arrow" type="button" data-chapter-next aria-label="Photo suivante">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="chapter-copy reveal-up">
+        <p class="chapter-standfirst">
+          «&nbsp;Nous‑Mêmes, Nous‑Mêmes&nbsp;» — cérémonie d'ouverture.
+        </p>
+
+        <p class="chapter-lead">
+          Un rendez-vous fondateur ouvert sous le signe d'une promesse&nbsp;: «&nbsp;<strong>Le meilleur est à venir</strong>&nbsp;». La Direction Générale a adressé ses vœux au personnel et partagé les réalisations 2025 ainsi que les perspectives 2026, devant <strong>120 collaborateurs</strong> réunis à l'hôtel Hilton de Kinshasa.
+        </p>
+        <p class="chapter-lead">
+          La cérémonie a également mis à l'honneur <strong>14 collaborateurs</strong> célébrant 5, 10 et 15 années d'ancienneté, en reconnaissance de leur engagement et de leur contribution au développement de la banque.
+        </p>
+
+        <div class="chapter-facts">
+          <div class="chapter-fact"><b>120</b><span>Collaborateurs réunis</span></div>
+          <div class="chapter-fact"><b>14</b><span>Collaborateurs honorés</span></div>
+          <div class="chapter-fact"><b>15</b><span>Ans de présence en RDC</span></div>
+        </div>
+
+        <div class="chapter-tag">
+          <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+          Le meilleur est à venir
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     JANVIER 2026 · Retraite stratégique
+     ============================================================ -->
+<section class="story-section retreat-section" id="retraite-strategique" aria-labelledby="retreat-title">
+  <div class="retreat-decor" aria-hidden="true">
+    <span class="retreat-line"></span>
+    <span class="bgfi-star bgfi-star--lg"></span>
+  </div>
+  <div class="container retreat-shell">
+    <header class="retreat-copy reveal-up">
+      <p class="editorial-date"><span>Janvier 2026</span><i aria-hidden="true"></i><span>Brazzaville</span></p>
+      <h2 class="story-title" id="retreat-title">Retraite <em>stratégique.</em></h2>
+      <p class="retreat-lead">Brazzaville a accueilli la retraite stratégique du Comité de Direction BGFIBank RDC&nbsp;!</p>
+      <p>Deux jours de travail intense pour réfléchir, s’aligner et fixer les objectifs à venir, suivis d’un team building pour renforcer l’esprit d’équipe.</p>
+      <ol class="retreat-steps" aria-label="Les temps forts de la retraite stratégique">
+        <li><span>01</span><strong>Stratégie</strong></li>
+        <li><span>02</span><strong>Collaboration</strong></li>
+        <li><span>03</span><strong>Team Building</strong></li>
+      </ol>
+    </header>
+
+    <div class="retreat-gallery" aria-label="Temps forts de la retraite stratégique">
+      <figure class="retreat-photo retreat-photo--hero reveal-up" style="--rd:.06s">
+        <img src="images/2026/retraite-strategique-01.jpg" alt="Le Comité de Direction de BGFIBank RDC réuni en séance de travail à Brazzaville." width="1024" height="682" loading="lazy" decoding="async">
+        <figcaption>Aligner les ambitions</figcaption>
+      </figure>
+      <figure class="retreat-photo retreat-photo--detail reveal-up" style="--rd:.14s">
+        <img src="images/2026/retraite-strategique-02.jpg" alt="Trois collaborateurs travaillent ensemble sur un ordinateur pendant la retraite stratégique." width="1024" height="682" loading="lazy" decoding="async">
+        <figcaption>Décider ensemble</figcaption>
+      </figure>
+      <figure class="retreat-photo retreat-photo--team reveal-up" style="--rd:.22s">
+        <img src="images/2026/retraite-strategique-03.jpg" alt="Trois collaboratrices échangent autour d'un ordinateur lors d'un atelier en extérieur." width="1024" height="682" loading="lazy" decoding="async">
+        <figcaption>Renforcer la cohésion</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FÉVRIER 2026 · Investing in African Mining Indaba
+     ============================================================ -->
+<section class="story-section indaba-section" id="indaba-2026" aria-labelledby="indaba-title">
+  <div class="indaba-atmosphere" aria-hidden="true">
+    <span class="indaba-orb"></span>
+    <span class="bgfi-star bgfi-star--xl"></span>
+  </div>
+  <div class="container indaba-shell">
+    <div class="indaba-visuals">
+      <figure class="indaba-photo indaba-photo--main reveal-left">
+        <img src="images/2026/indaba-2026-delegation.jpg" alt="La délégation du Groupe BGFI réunie à Investing in African Mining Indaba 2026." width="1024" height="682" loading="lazy" decoding="async">
+      </figure>
+      <figure class="indaba-photo indaba-photo--support reveal-up" style="Display:none ; --rd:.15s">
+        <img src="images/2026/voeux20252026.jpg" alt="Présentation de l'équipe BGFIBank RDC présente à African Mining Indaba 2026." width="997" height="957" loading="lazy" decoding="async">
+        <figcaption><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Stand 2F10 · CTICC2</figcaption>
+      </figure>
+    </div>
+
+    <div class="indaba-copy reveal-right">
+      <p class="editorial-date editorial-date--light"><span>Kinshasa</span><i aria-hidden="true"></i><span>9 au 12 Février 2026</span></p>
+      <span class="indaba-kicker">Présence internationale · Secteur minier</span>
+      <h2 class="story-title light" id="indaba-title">BGFIBank RDC présente à <em>Indaba 2026.</em></h2>
+      <p>BGFIBank RDC a pris part à Indaba 2026, aux côtés de la Holding, de BGFIEurope, de BGFIBank Côte d’Ivoire et de la Fondation BGFI, illustrant la mobilisation du Groupe autour de ce rendez-vous majeur.</p>
+      <div class="indaba-pillars" aria-label="Enjeux de la présence à Indaba 2026">
+        <span>Groupe</span><span>Mining</span><span>Visibilité</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · Séminaire Abidjan — Dark editorial
+     ============================================================ -->
+<section class="story-section feature-dark" id="story-abidjan">
+  <div class="feature-dark-bg" aria-hidden="true">
+    <span class="fd-orb fd-orb--a"></span>
+    <span class="fd-orb fd-orb--b"></span>
+    <span class="bgfi-star bgfi-star--xl fd-decor-star"></span>
+  </div>
+  <div class="container reveal-up">
+    <div class="feature-header">
+      <span class="chapter-num light">
+        <span class="bgfi-star bgfi-star--sm"></span>
+        <span>Chapitre III</span>
+      </span>
+      <span class="story-month light">Mars · 3 → 6</span>
+      <span class="story-rubric light">BGFI s'engage &amp; culture d'entreprise</span>
+      <h2 class="story-title light">Séminaire Capital Humain<br/><em>&amp; Communication 2026.</em></h2>
+    </div>
+    <p class="feature-intro">Deux séminaires pour renforcer les talents, la communication et la cohésion au sein de BGFIBank RDC.</p>
+    <div class="feature-grid feature-grid--seminars">
+      <div class="feature-visual feature-visual--trio" aria-label="Photographies des séminaires Capital Humain et Communication">
+        <figure class="seminar-photo seminar-photo--hero reveal-left">
+          <img src="images/2026/img26.jpg" alt="La délégation BGFIBank RDC réunie au séminaire d'Abidjan 2026." width="495" height="329" loading="lazy" decoding="async">
+          <figcaption>La délégation RDC · Abidjan 2026</figcaption>
+        </figure>
+        <figure class="seminar-photo seminar-photo--capital reveal-up" style="--rd:.12s">
+          <img src="images/2026/seminaire-capital-humain.jpg" alt="Les participants au Séminaire Capital Humain réunis autour de leur table de travail." width="1024" height="859" loading="lazy" decoding="async">
+          <figcaption>Capital Humain</figcaption>
+        </figure>
+        <figure class="seminar-photo seminar-photo--communication reveal-up" style="--rd:.2s">
+          <img src="images/2026/seminaire-communication.jpg" alt="La délégation BGFIBank RDC participant au Séminaire Communication." width="1024" height="572" loading="lazy" decoding="async">
+          <figcaption>Communication</figcaption>
+        </figure>
+        <div class="feature-visual-badge">
+          <span class="bgfi-star bgfi-star--xs"></span>
+          <span>Trois regards · Une vision</span>
+        </div>
+      </div>
+      <div class="feature-text light">
+        <p>
+          Du 3 au 6 mars 2026, toutes les filiales du groupe étaient conviées à Abidjan pour partager ensemble la <strong>vision BGFI 2030</strong>. Un moment fort de communion collective, où stratégie, culture et humain se sont rencontrés autour d'une même ambition.
+        </p>
+        <div class="seminar-topics">
+          <article class="seminar-topic reveal-up" style="--rd:.08s">
+            <span class="seminar-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3.5 20c.4-4 2.2-6 5.5-6s5.1 2 5.5 6M15 14c3.4 0 5 1.7 5.5 5"/></svg>
+            </span>
+            <span><small>01 · Talents</small><strong>Séminaire Capital Humain</strong></span>
+          </article>
+          <article class="seminar-topic reveal-up" style="--rd:.16s">
+            <span class="seminar-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 14a3 3 0 0 1-3 3H9l-5 4v-4a3 3 0 0 1-2-3V7a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v7Z"/><path d="M7 9h8M7 12h5"/></svg>
+            </span>
+            <span><small>02 · Dialogue</small><strong>Séminaire Communication</strong></span>
+          </article>
+        </div>
+        <p>
+          La délégation RDC — reconnue pour ses résultats — a porté haut les couleurs de la filiale et présenté les grands chantiers en cours, dont <strong>Mbotama Ya Sika</strong> et le projet <strong>BGFI 30 – BRD 28</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · Performance — Statistic-driven full-bleed
+     ============================================================ -->
+<section class="story-section perf-section" id="story-perf">
+  <div class="perf-bg" aria-hidden="true">
+    <span class="bgfi-star bgfi-star--xl perf-decor-a"></span>
+    <span class="bgfi-star bgfi-star--lg perf-decor-b"></span>
+  </div>
+  <div class="container reveal-up">
+    <div class="perf-header">
+      <span class="story-month">Mars · 20</span>
+      <span class="story-rubric">Réunion du personnel</span>
+      <h2 class="story-title">Cap sur la performance <em>et les ambitions 2026.</em></h2>
+      <p class="perf-intro">
+        Le 20 mars, les équipes de BGFIBank RDC se sont réunies pour découvrir les résultats de l'exercice 2025 — et surtout, pour prendre ensemble la mesure des ambitions qui les attendent.
+      </p>
+      <!-- Phrase remontée en haut de section, sans la mention de pourcentage -->
+      <p class="perf-lede">
+        Un Produit Net Bancaire largement supérieur au budget et le projet <strong>BGFI 30 – BRD 28</strong> déjà bien avancé autour de ses quatre piliers stratégiques.
+      </p>
+    </div>
+
+    <div class="perf-hero">
+      <div class="perf-hero-visual">
+        <img src="images/img13.jpg" alt="Réunion du personnel BGFIBank RDC — Résultats 2025">
+        <span class="perf-hero-veil"></span>
+
+      </div>
+
+        <div class="perf-stats">
+        <div class="perf-stat">
+          <span class="perf-stat-num">51,160</span>
+          <span class="perf-stat-unit">M USD</span>
+          <span class="perf-stat-label">PNB 2025</span>
+        </div>
+        <div class="perf-stat perf-stat--gold">
+          <span class="perf-stat-num">58,000</span>
+          <span class="perf-stat-unit">M USD</span>
+          <span class="perf-stat-label">Budgetisé en 2026</span>
+        </div>
+        
+      </div>
+      
+      
+    </div>
+
+    <!-- Les deux « perf-close » ont été remontées :
+         · la phrase de synthèse ouvre désormais la section (.perf-lede),
+           débarrassée de la mention de pourcentage d'avancement ;
+         · la chute en italique est remontée au niveau des indicateurs
+           (voir #indicateurs > .indicators-outro). -->
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · Banques correspondantes — World map style
+     ============================================================ -->
+<section class="story-section world-section" id="story-banques">
+
+  <div class="container reveal-up">
+
+    <div class="world-grid">
+      <div class="world-visual">
+        <img src="images/img21.jpg" alt="Mission internationale BGFIBank RDC">
+        <span class="world-visual-badge"><span class="bgfi-star bgfi-star--xs"></span> 22.03 → 04.04.2026</span>
+      </div>
+<div class="newcontainer">
+ <div class="section-eyebrow">
+      <span class="line"></span>
+      <span class="eyebrow-text"><span class="bgfi-star bgfi-star--xs"></span> International</span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title">Nos équipes à la rencontre <em>de nos banques correspondantes.</em></h2>
+    <p class="section-lead">
+      Du 22 mars au 4 avril 2026, une délégation composée de <strong>Prince Makali</strong> (Directeur Trésorerie), <strong>Chifuk Max</strong> (Chef de Service Paiement International &amp; Trade Finance) et <strong>Adonis Muamba</strong> (Directeur Conformité) a effectué une mission stratégique en Europe et au Maghreb.
+    </p>
+
+<div class="world-countries">
+
+        <div class="world-country reveal-up in-view" style="--rd:.05s">
+          <span class="wc-flag"><img src="images/flags/tn.svg" alt="Drapeau Tunisie" loading="lazy"></span>
+          <span class="wc-body">
+            <span class="wc-name">Tunisie</span>
+            <span class="wc-note">Trade Finance &amp; correspondance</span>
+          </span>
+          <span class="wc-star"><span class="bgfi-star bgfi-star--xs"></span></span>
+        </div>
+        <div class="world-country reveal-up in-view" style="--rd:.15s">
+          <span class="wc-flag"><img src="images/flags/tr.svg" alt="Drapeau Turquie" loading="lazy"></span>
+          <span class="wc-body">
+            <span class="wc-name">Turquie</span>
+            <span class="wc-note">Partenariats bilatéraux</span>
+          </span>
+          <span class="wc-star"><span class="bgfi-star bgfi-star--xs"></span></span>
+        </div>
+        <div class="world-country reveal-up in-view" style="--rd:.25s">
+          <span class="wc-flag"><img src="images/flags/es.svg" alt="Drapeau Espagne" loading="lazy"></span>
+          <span class="wc-body">
+            <span class="wc-name">Espagne</span>
+            <span class="wc-note">Flux internationaux</span>
+          </span>
+          <span class="wc-star"><span class="bgfi-star bgfi-star--xs"></span></span>
+        </div>
+        <div class="world-country reveal-up in-view" style="--rd:.35s">
+          <span class="wc-flag"><img src="images/flags/fr.svg" alt="Drapeau France" loading="lazy"></span>
+          <span class="wc-body">
+            <span class="wc-name">France</span>
+            <span class="wc-note">Conformité &amp; place financière</span>
+          </span>
+          <span class="wc-star"><span class="bgfi-star bgfi-star--xs"></span></span>
+        </div>
+      </div>
+      </div>    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · KBM — Immersive banner + gallery
+     ============================================================ -->
+<section class="story-section kbm-section" id="story-kbm">
+  <div class="kbm-banner reveal-up">
+    <img src="images/img06.jpg" alt="Délégation BGFI au KBM 2026" class="kbm-banner-img">
+    <div class="kbm-banner-veil"></div>
+    <span class="bgfi-star bgfi-star--lg kbm-banner-star"></span>
+    <div class="kbm-banner-inner">
+      <div class="kbm-banner-content">
+        <span class="kbm-eyebrow">
+          <span class="kbm-eyebrow-line"></span>
+          <span class="bgfi-star bgfi-star--xs"></span>
+          <span class="kbm-eyebrow-text">Katanga Business Meeting</span>
+          <span class="kbm-eyebrow-line"></span>
+        </span>
+        <span class="kbm-date light">20 → 22 mai 2026</span>
+        <h2 class="story-title light kbm-banner-title">BGFIBank RDC au cœur du <em>KBM 2026.</em></h2>
+        <div class="kbm-banner-divider" aria-hidden="true">
+          <span class="kbm-divider-line"></span>
+          <span class="bgfi-star bgfi-star--sm"></span>
+          <span class="kbm-divider-line"></span>
+        </div>
+		<div class="light kbm-banner-lead">
+          <p>7e édition à Kolwezi - capitale mondiale du cobalt. Un rendez-vous majeur du secteur minier, où la banque a présenté son offre phare <strong>BGFIMines FLEX</strong>  à ses invités. présenté à ses clients miniers de la province du Haut Katanga</p>
+          <p class="kbm-presence"><span>En présence de</span> la Gouverneure du Lualaba, <strong>Mme Fifi MASUKA</strong></p>
+        </div>
+        <div class="kbm-banner-meta">
+          <div class="kbm-meta-item"><b>7<sup>e</sup></b><span>édition</span></div>
+          <span class="kbm-meta-sep"><span class="bgfi-star bgfi-star--xs"></span></span>
+          <div class="kbm-meta-item"><b>Kolwezi</b><span>Lualaba · RDC</span></div>
+          <span class="kbm-meta-sep"><span class="bgfi-star bgfi-star--xs"></span></span>
+          <div class="kbm-meta-item"><b>Mining</b><span>Secteur stratégique</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="kbm-gallery kbm-gallery--featured reveal-up">
+      <figure class="kbm-gallery-primary"><img src="images/2026/BGFIMINESFLEX1.jpg" alt="Présentation de BGFIMines FLEX en présence de la Gouverneure du Lualaba" loading="lazy" decoding="async"><figcaption>Rencontre institutionnelle · Haut-Katanga</figcaption></figure>
+      <figure class="kbm-gallery-secondary"><img src="images/2026/bgfiminesflex2.jpg" alt="Équipe BGFIBank au stand BGFIMines FLEX" loading="lazy" decoding="async"><figcaption>BGFIMines FLEX · Au plus près des acteurs miniers</figcaption></figure>
+    </div>
+
+    <div class="kbm-offer reveal-up">
+      <div class="kbm-offer-star" aria-hidden="true">
+        <span class="bgfi-star bgfi-star--xl"></span>
+      </div>
+      <div class="kbm-offer-body">
+        <span class="kbm-offer-label"><span class="bgfi-star bgfi-star--xs"></span> Offre dédiée</span>
+        <h3>BGFIMines FLEX</h3>
+        <p>
+          Une offre dédiée aux besoins des entreprises du secteur minier&nbsp;: financement flexible, accompagnement expert, solutions internationales.
+          <em>La banque partenaire des grands Projets miniers de la RDC.</em>
+        </p>
+        <div class="kbm-offer-tags">
+          <span>Financement Flex</span>
+          <span>Trade Finance</span>
+          <span>Advisory</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BGFI TOUR · Variation 1 — Panorama éditorial
+     ============================================================ -->
+<section  class="story-section magazine-left tour-section tour-variation tour-variation--panorama" id="story-tour-variation-1" aria-labelledby="tour-variation-1-title">
+  <div class="container reveal-up">
+    <header class="tour-variation-head">
+      <div class="mag-meta"><span class="story-month">6 juin 2026</span><span class="mag-dot"></span><span class="story-rubric">Panorama éditorial</span></div>
+      <h2 class="story-title" id="tour-variation-1-title">Sport, networking <em>et opportunités d'affaires.</em></h2>
+      <p class="mag-lead">Le <strong>BGFI Tour</strong> revient pour sa 4ᵉ édition au <strong>Golf Club de Lubumbashi</strong>, réunissant 84 golfeurs autour de l’excellence sportive et de relations durables.</p>
+    </header>
+    <div class="tour-panorama-media" aria-label="BGFI Premier Tour 2026">
+      <figure class="tour-variant-photo tour-variant-photo--poster reveal-left">
+        <img src="images/img25.jpg" alt="Affiche officielle du BGFI Premier Tour 2026" width="760" height="1024" loading="lazy" decoding="async">
+        <figcaption>Affiche officielle · 4ᵉ édition</figcaption>
+      </figure>
+      <figure class="tour-variant-photo tour-variant-photo--wide reveal-right">
+        <img src="images/2026/bgfitourJuin.jpg" alt="Golfeur en action au BGFI Premier Tour 2026" width="1024" height="682" loading="lazy" decoding="async">
+        <figcaption>Golf Club de Lubumbashi · Sur le green</figcaption>
+      </figure>
+    </div>
+    <div class="tour-panorama-foot">
+      <p>Parmi les participants remarqués&nbsp;: <strong>Francesco De Musso</strong>, <strong>Alexis Kabongo</strong> et <strong>Solange Muanji</strong> — figures marquantes d’une journée portée par l’excellence du service et l’esprit de communauté.</p>
+      <div class="tour-stats"><div><b>84</b><span>golfeurs</span></div><div class="sep"><span class="bgfi-star bgfi-star--xs"></span></div><div><b>4<sup>e</sup></b><span>édition</span></div><div class="sep"><span class="bgfi-star bgfi-star--xs"></span></div><div><b>1</b><span>journée d'exception</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · BGFI Tour — Elegant golf feature
+     ============================================================ -->
+<section style ="Display:none" class="story-section magazine-left tour-section" id="story-tour">
+  <div class="container">
+    <div class="mag-grid reveal-up">
+      <div class="mag-visual mag-visual--left mag-visual--gold tour-gallery" aria-label="Temps forts du BGFI Premier Tour 2026">
+        <figure class="tour-photo tour-photo--main reveal-left">
+          <img src="images/img25.jpg" alt="Affiche officielle du BGFI Premier Tour 2026 au Golf Club de Lubumbashi" width="760" height="1024" loading="lazy" decoding="async">
+          <figcaption>4ᵉ édition · Golf Club de Lubumbashi</figcaption>
+        </figure>
+        <figure class="tour-photo tour-photo--action reveal-up" style="--rd:.14s">
+          <img src="images/2026/bgfitourJuin.jpg" alt="Un golfeur en action sur le parcours du BGFI Premier Tour à Lubumbashi" width="1024" height="682" loading="lazy" decoding="async">
+          <figcaption>Sur le green · Juin 2026</figcaption>
+        </figure>
+        <span class="mag-frame-corner mag-frame-corner--tl gold" aria-hidden="true"></span>
+        <span class="mag-frame-corner mag-frame-corner--br gold" aria-hidden="true"></span>
+      </div>
+      <div class="mag-content">
+        <div class="mag-meta">
+          <span class="story-month">6 juin 2026</span>
+          <span class="mag-dot"></span>
+          <span class="story-rubric">BGFI Premier Tour · 4ᵉ édition</span>
+        </div>
+        <h2 class="story-title">Sport, networking <em>et opportunités d'affaires.</em></h2>
+        <p class="mag-lead">
+          Le <strong>BGFI Tour</strong> est de retour pour sa 4ᵉ édition, au <strong>Golf Club de Lubumbashi</strong>. Sur le green, <strong>84 golfeurs</strong> — clients, partenaires et dirigeants — se sont retrouvés pour une journée où l'élégance du geste rencontre l'art de construire des relations durables.
+        </p>
+        <p>
+          Parmi les participants remarqués&nbsp;: <strong>Francesco De Musso</strong>, <strong>Alexis Kabongo</strong> et <strong>Solange Muanji</strong> — figures marquantes de cette édition portée par l'excellence du service et l'esprit de communauté.
+        </p>
+        <div class="tour-stats">
+          <div><b>84</b><span>golfeurs</span></div>
+          <div class="sep"><span class="bgfi-star bgfi-star--xs"></span></div>
+          <div><b>4<sup>e</sup></b><span>édition</span></div>
+          <div class="sep"><span class="bgfi-star bgfi-star--xs"></span></div>
+          <div><b>1</b><span>journée d'exception</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BGFI TOUR · Variation 2 — Dossier en trois colonnes
+     ============================================================ -->
+<section style ="Display:none" class="story-section magazine-left tour-section tour-variation tour-variation--dossier" id="story-tour-variation-2" aria-labelledby="tour-variation-2-title">
+  <div class="container reveal-up">
+    <div class="tour-dossier-grid">
+      <figure class="tour-variant-photo tour-variant-photo--poster reveal-left">
+        <img src="images/img25.jpg" alt="Affiche officielle du BGFI Premier Tour 2026" width="760" height="1024" loading="lazy" decoding="async">
+        <figcaption>6 juin 2026 · Lubumbashi</figcaption>
+      </figure>
+      <div class="tour-dossier-copy">
+        <div class="mag-meta"><span class="story-month">6 juin 2026</span><span class="mag-dot"></span><span class="story-rubric">Variation 2 · Dossier</span></div>
+        <h2 class="story-title" id="tour-variation-2-title">L'élégance du geste rencontre <em>l'art de la relation.</em></h2>
+        <p class="mag-lead">Au <strong>Golf Club de Lubumbashi</strong>, 84 clients, partenaires et dirigeants ont partagé une journée où sport, networking et opportunités d’affaires avancent sur le même parcours.</p>
+        <p>Avec <strong>Francesco De Musso</strong>, <strong>Alexis Kabongo</strong> et <strong>Solange Muanji</strong>, cette 4ᵉ édition affirme une communauté portée par l’excellence et la confiance.</p>
+        <div class="tour-dossier-number"><b>84</b><span>golfeurs réunis<br>pour une journée d’exception</span></div>
+      </div>
+      <figure class="tour-variant-photo tour-variant-photo--action reveal-right">
+        <img src="images/2026/bgfitourJuin.jpg" alt="Golfeur accompagné de son caddie pendant le BGFI Premier Tour" width="1024" height="682" loading="lazy" decoding="async">
+        <figcaption>Sur le parcours · 4ᵉ édition</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BGFI TOUR · Variation 3 — Une de magazine
+     ============================================================ -->
+<section style ="Display:none" class="story-section magazine-left tour-section tour-variation tour-variation--cover" id="story-tour-variation-3" aria-labelledby="tour-variation-3-title">
+  <div class="container reveal-up">
+    <div class="tour-cover-grid">
+      <div class="tour-cover-copy">
+        <span class="tour-cover-index">Variation 3 · Une de magazine</span>
+        <div class="mag-meta"><span class="story-month">6 juin 2026</span><span class="mag-dot"></span><span class="story-rubric">BGFI Premier Tour · 4ᵉ édition</span></div>
+        <h2 class="story-title" id="tour-variation-3-title">Sur le green, les ambitions <em>se rencontrent.</em></h2>
+        <p class="mag-lead">Une journée d’exception au Golf Club de Lubumbashi&nbsp;: <strong>84 golfeurs</strong>, des échanges privilégiés et une même culture de la performance.</p>
+        <p>Clients, partenaires et dirigeants ont créé des liens durables dans un cadre où chaque geste raconte la précision, la confiance et l’élégance BGFI.</p>
+        <div class="tour-cover-facts"><span><b>84</b> golfeurs</span><span><b>4ᵉ</b> édition</span><span><b>01</b> journée</span></div>
+      </div>
+      <div class="tour-cover-gallery" aria-label="Images du BGFI Premier Tour 2026">
+        <figure class="tour-variant-photo tour-variant-photo--poster reveal-up">
+          <img src="images/img25.jpg" alt="Affiche officielle du BGFI Premier Tour 2026" width="760" height="1024" loading="lazy" decoding="async">
+          <figcaption>L’affiche · BGFI Premier Tour</figcaption>
+        </figure>
+        <figure class="tour-variant-photo tour-variant-photo--action reveal-up" style="--rd:.14s">
+          <img src="images/2026/bgfitourJuin.jpg" alt="Golfeur en plein jeu au BGFI Premier Tour" width="1024" height="682" loading="lazy" decoding="async">
+          <figcaption>Le parcours · Lubumbashi</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · DRC Mining Week — Split (image right)
+     ============================================================ -->
+<section class="story-section magazine-right" id="story-mining">
+  <div class="container">
+    <div class="mag-grid reveal-up">
+      <div class="mag-content">
+        <div class="mag-meta">
+          <span class="story-month">11 → 13 juin 2026</span>
+          <span class="mag-dot"></span>
+          <span class="story-rubric">DRC Mining Week</span>
+        </div>
+        <h2 class="story-title">Nos équipes commerciales <em>à l'honneur.</em></h2>
+        <p class="mag-lead">
+          Du 11 au 13 juin 2026, à Lubumbashi, BGFIBank RDC a pris part à la <strong>DRC Mining Week</strong>, rendez‑vous incontournable du secteur minier africain. Sur place, nos équipes commerciales ont porté haut les couleurs de la banque et présenté <strong>BGFIMines FLEX</strong> auprès des grands acteurs du secteur.
+        </p>
+        <div class="team-callout">
+          <span class="team-callout-label"><span class="bgfi-star bgfi-star--xs"></span> Équipe commerciale</span>
+          <div class="team-names">
+            <span>Alain FAZILI</span>
+            <span>Isaac IBUABU</span>
+            <span>Carlos KALONGA</span>
+            <span>Jean Félix MULUNDA</span>
+            <span>Samuel LIRIPA</span>
+            <span>Siyah VAN WAEYENBERGE</span>
+          </div>
+        </div>
+      </div>
+      <div class="mag-visual mag-visual--right">
+        <div class="mag-frame">
+          <img src="images/img14.jpg" alt="BGFIBank à la DRC Mining Week 2026">
+          <span class="mag-frame-corner mag-frame-corner--tr"></span>
+          <span class="mag-frame-corner mag-frame-corner--bl"></span>
+        </div>
+        <div class="mag-caption">
+          <span class="bgfi-star bgfi-star--xs"></span>
+          <span>Lubumbashi · Juin 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPITRE IV · Innovation projets structurants
+     ============================================================ -->
+<section class="chapitre-divider chapitre-divider--circuit" id="chapitre-4" aria-labelledby="chapitre-4-title">
+  <div class="cd-canvas" aria-hidden="true">
+    <span class="cd-wash"></span>
+    <span class="cd-mesh"></span>
+    <span class="cd-grain"></span>
+    <span class="cd-figure"></span>
+    <span class="cd-numeral-ghost">IV</span>
+    <span class="cd-spark cd-spark--a"></span>
+    <span class="cd-spark cd-spark--b"></span>
+    <span class="cd-spark cd-spark--c"></span>
+  </div>
+
+  <div class="container cd-inner">
+    <p class="cd-kicker reveal-up">
+      <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+      <span class="cd-kicker-text">Chapitre IV</span>
+      <span class="cd-kicker-rule" aria-hidden="true"></span>
+      <span class="cd-kicker-count">4 / 8</span>
+    </p>
+
+    <div class="cd-head">
+      <span class="cd-numeral reveal-up" aria-hidden="true">IV</span>
+      <div class="cd-headings">
+        <h2 class="cd-title reveal-up" id="chapitre-4-title" style="--rd:.06s">Innovation<br/><em>projets structurants</em></h2>
+        <p class="cd-standfirst reveal-up" style="--rd:.12s">Les chantiers qui transforment la banque&nbsp;: le digital, le réseau, et l’argent réinventé.</p>
+      </div>
+    </div>
+
+    <div class="cd-rule reveal-up" style="--rd:.16s" aria-hidden="true">
+      <span class="cd-rule-line"></span>
+      <span class="bgfi-star bgfi-star--sm"></span>
+      <span class="cd-rule-line"></span>
+    </div>
+
+    <div class="cd-foot reveal-up" style="--rd:.2s">
+      <ul class="cd-list" aria-label="Au sommaire de ce chapitre">
+        <li class="cd-item"><a href="#story-digital"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Projet de transformation digitale — kick off</span><span class="cd-item-date">Avril 2026</span></a></li>
+        <li class="cd-item"><a href="#story-muanda"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Ouverture agence BGFIBank Muanda</span><span class="cd-item-date">28 avril 2026</span></a></li>
+        <li class="cd-item"><a href="#story-rakka"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">RakkaCash évolue</span><span class="cd-item-date">Mai 2026</span></a></li>
+      </ul>
+      <p class="cd-dateline"><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Trois projets structurants · Avril — Mai 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · Transformation digitale — Pillars layout
+     ============================================================ -->
+<section class="story-section digital-section" id="story-digital">
+  <div class="container reveal-up">
+    <div class="section-eyebrow center">
+      <span class="line"></span>
+      <span class="eyebrow-text"><span class="bgfi-star bgfi-star--xs"></span> Transformation Digitale <span class="bgfi-star bgfi-star--xs"></span></span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title center">L'intelligence collective <em>au service de notre transformation.</em></h2>
+    <p class="section-lead center">
+      BGFIBank RDC a lancé l'onboarding de <strong>25 référents métiers</strong> engagés dans le projet de transformation digitale. Un programme sur 10 mois, pensé autour du <em>Design Thinking</em>, pour co‑construire la banque de demain avec ceux qui la font vivre chaque jour.
+    </p>
+
+    <div class="digital-hero">
+      <img src="images/img23.jpg" alt="Onboarding transformation digitale BGFIBank RDC">
+      <span class="digital-hero-veil"></span>
+      <div class="digital-hero-tag">
+        <span class="bgfi-star bgfi-star--sm"></span>
+        <span>Design Thinking · 10 mois d'immersion</span>
+      </div>
+    </div>
+
+    <div class="digital-pillars">
+      <div class="pillar reveal-up" style="--rd:.05s">
+        <span class="pillar-star"><span class="bgfi-star bgfi-star--md"></span></span>
+        <span class="pillar-num">01</span>
+        <h3>Design Thinking</h3>
+        <p>Une méthode centrée sur l'humain, pour transformer les usages avant les outils.</p>
+      </div>
+      <div class="pillar reveal-up" style="--rd:.15s">
+        <span class="pillar-star"><span class="bgfi-star bgfi-star--md"></span></span>
+        <span class="pillar-num">02</span>
+        <h3>25 Référents</h3>
+        <p>Un réseau d'ambassadeurs représentant tous les métiers de la banque.</p>
+      </div>
+      <div class="pillar reveal-up" style="--rd:.25s">
+        <span class="pillar-star"><span class="bgfi-star bgfi-star--md"></span></span>
+        <span class="pillar-num">03</span>
+        <h3>10 mois</h3>
+        <p>Un programme d'immersion progressive, jusqu'à la mise en œuvre opérationnelle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · Muanda — VARIATION 1 · « Triptyque »
+     The img12.jpg figure was removed; the two remaining detail shots
+     now stand as equal columns under a full-bleed hero, so the grid
+     reads as a deliberate 1 + 2 triptych instead of an orphaned stack.
+     ============================================================ -->
+<section class="story-section muanda-section muanda-variation muanda-variation--triptyque" id="story-muanda">
+  <div class="muanda-bg" aria-hidden="true">
+    <span class="bgfi-star bgfi-star--xl muanda-decor"></span>
+  </div>
+  <div class="container reveal-up">
+    <div class="muanda-header">
+      <span class="chapter-num light">
+        <span class="bgfi-star bgfi-star--sm"></span>
+        <span>Chapitre VIII</span>
+      </span>
+      <span class="story-month light">Avril · 28</span>
+      <span class="story-rubric light">Réseau d'agences</span>
+      <h2 class="story-title light">Une nouvelle agence au cœur <em>de Muanda.</em></h2>
+    </div>
+    <div class="muanda-gallery">
+      <div class="muanda-hero reveal-up" style="--rd:.05s">
+        <img src="images/img09.jpg" alt="Nouvelle agence BGFIBank Muanda" loading="lazy" decoding="async">
+        <span class="muanda-hero-badge">
+          <span class="bgfi-star bgfi-star--xs"></span>
+          <span>Agence SATURNE</span>
+        </span>
+      </div>
+      <div class="muanda-details">
+        <figure class="reveal-up" style="--rd:.15s">
+          <img src="images/img10.jpg" alt="Intérieur de l'agence BGFIBank Muanda" loading="lazy" decoding="async">
+          <figcaption><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Espace clientèle</figcaption>
+        </figure>
+        <figure class="reveal-up" style="--rd:.25s">
+          <img src="images/img11.jpg" alt="Zone d'accueil de l'agence BGFIBank Muanda" loading="lazy" decoding="async">
+          <figcaption><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Zone d'accueil</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="muanda-caption light">
+      Le 28 avril, BGFIBank RDC a inauguré sa nouvelle agence de <strong>Saturne</strong>, dans le quartier <em>Malamba Bendo</em>. Un point de contact moderne, chaleureux et connecté, pensé pour rapprocher la banque des populations et des entreprises de la côte atlantique.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · Muanda — VARIATION 2 · « Vitrine »
+     Editorial split: the hero becomes a tall portrait window on the
+     left, the copy and the two interior shots build a stacked column
+     on the right. Activate by removing style="display:none".
+     ============================================================ -->
+<section style="display:none" class="story-section muanda-section muanda-variation muanda-variation--vitrine" id="story-muanda-variation-2" aria-labelledby="muanda-v2-title">
+  <div class="muanda-bg" aria-hidden="true">
+    <span class="bgfi-star bgfi-star--xl muanda-decor"></span>
+  </div>
+  <div class="container reveal-up">
+    <div class="muanda-vitrine">
+      <figure class="mv-hero reveal-left">
+        <img src="images/img09.jpg" alt="Nouvelle agence BGFIBank Muanda" loading="lazy" decoding="async">
+        <span class="muanda-hero-badge">
+          <span class="bgfi-star bgfi-star--xs"></span>
+          <span>Agence SATURNE</span>
+        </span>
+      </figure>
+      <div class="mv-copy reveal-right">
+        <span class="chapter-num light">
+          <span class="bgfi-star bgfi-star--sm"></span>
+          <span>Chapitre VIII</span>
+        </span>
+        <span class="story-month light">Avril · 28</span>
+        <span class="story-rubric light">Réseau d'agences</span>
+        <h2 class="story-title light" id="muanda-v2-title">Une nouvelle agence au cœur <em>de Muanda.</em></h2>
+        <p class="mv-lead">
+          Le 28 avril, BGFIBank RDC a inauguré sa nouvelle agence de <strong>Saturne</strong>, dans le quartier <em>Malamba Bendo</em>.
+        </p>
+        <p>
+          Un point de contact moderne, chaleureux et connecté, pensé pour rapprocher la banque des populations et des entreprises de la côte atlantique.
+        </p>
+        <div class="mv-thumbs">
+          <figure class="reveal-up" style="--rd:.14s">
+            <img src="images/img10.jpg" alt="Intérieur de l'agence BGFIBank Muanda" loading="lazy" decoding="async">
+            <figcaption>Espace clientèle</figcaption>
+          </figure>
+          <figure class="reveal-up" style="--rd:.22s">
+            <img src="images/img11.jpg" alt="Zone d'accueil de l'agence BGFIBank Muanda" loading="lazy" decoding="async">
+            <figcaption>Zone d'accueil</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · Muanda — VARIATION 3 · « Panorama »
+     The hero runs full-bleed with the title laid over it; the two
+     interior shots sit below as a wide duo framing the caption.
+     Activate by removing style="display:none".
+     ============================================================ -->
+<section style="display:none" class="story-section muanda-section muanda-variation muanda-variation--panorama" id="story-muanda-variation-3" aria-labelledby="muanda-v3-title">
+  <div class="muanda-bg" aria-hidden="true">
+    <span class="bgfi-star bgfi-star--xl muanda-decor"></span>
+  </div>
+  <div class="container reveal-up">
+    <figure class="mp-stage reveal-up">
+      <img src="images/img09.jpg" alt="Nouvelle agence BGFIBank Muanda" loading="lazy" decoding="async">
+      <span class="mp-veil" aria-hidden="true"></span>
+      <figcaption class="mp-overlay">
+        <span class="story-month light">Avril · 28 · 2026</span>
+        <h2 class="story-title light" id="muanda-v3-title">Une nouvelle agence au cœur <em>de Muanda.</em></h2>
+        <span class="mp-place"><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Quartier Malamba Bendo · Côte atlantique</span>
+      </figcaption>
+    </figure>
+    <div class="mp-duo">
+      <figure class="reveal-up" style="--rd:.12s">
+        <img src="images/img10.jpg" alt="Intérieur de l'agence BGFIBank Muanda" loading="lazy" decoding="async">
+        <figcaption><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Espace clientèle</figcaption>
+      </figure>
+      <p class="mp-caption light">
+        Le 28 avril, BGFIBank RDC a inauguré son agence de <strong>Saturne</strong> — un point de contact moderne, chaleureux et connecté, pensé pour rapprocher la banque des populations et des entreprises de la côte atlantique.
+      </p>
+      <figure class="reveal-up" style="--rd:.2s">
+        <img src="images/img11.jpg" alt="Zone d'accueil de l'agence BGFIBank Muanda" loading="lazy" decoding="async">
+        <figcaption><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Zone d'accueil</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · RakkaCash V2 — Product showcase
+     ============================================================ -->
+<section class="story-section rakka-section" id="story-rakka">
+  <div class="rakka-bg" aria-hidden="true">
+    <span class="rakka-orb rakka-orb--a"></span>
+    <span class="rakka-orb rakka-orb--b"></span>
+    <span class="bgfi-star bgfi-star--xl rakka-decor"></span>
+    <svg class="rakka-curves" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+      <path d="M-40,720 C 260,500 520,300 900,320 C 1220,340 1420,220 1700,140" fill="none" stroke="rgba(157,180,154,.35)" stroke-width="1"/>
+      <path d="M-40,820 C 260,700 520,540 900,520 C 1220,520 1420,420 1700,320" fill="none" stroke="rgba(157,180,154,.22)" stroke-width="1"/>
+    </svg>
+  </div>
+  <div class="container reveal-up">
+    <div class="rakka-grid">
+      <div class="rakka-content">
+        <span class="chapter-num light">
+          <span class="bgfi-star bgfi-star--sm"></span>
+          <span>Innovation · Mobile Money</span>
+        </span>
+        <span class="story-month light">Mai 2026</span>
+        <h2 class="story-title light">RakkaCash évolue pour vous offrir <em>encore plus de services.</em></h2>
+        <p class="light">
+          La <strong>Version 2</strong> de RakkaCash est là. L'application mobile money de BGFIBank RDC franchit un nouveau cap&nbsp;: soldes en <strong>double devise (USD &amp; CDF)</strong>, transferts, retraits chez agent ou GAB, paiements par QR code, change USD/CDF, cartes BGFI et <em>billetterie d'événements</em> — le tout dans une seule app.
+        </p>
+        <div class="rakka-features">
+          <div class="rakka-feat"><span class="bgfi-star bgfi-star--xs"></span><span>Double devise USD &amp; CDF</span></div>
+          <div class="rakka-feat"><span class="bgfi-star bgfi-star--xs"></span><span>Transferts &amp; retraits partout</span></div>
+          <div class="rakka-feat"><span class="bgfi-star bgfi-star--xs"></span><span>Paiements QR code</span></div>
+          <div class="rakka-feat"><span class="bgfi-star bgfi-star--xs"></span><span>Cartes BGFI intégrées</span></div>
+          <div class="rakka-feat"><span class="bgfi-star bgfi-star--xs"></span><span>Billetterie d'événements</span></div>
+          <div class="rakka-feat"><span class="bgfi-star bgfi-star--xs"></span><span>Change USD/CDF instantané</span></div>
+        </div>
+      </div>
+      <div class="rakka-visual">
+        <div class="rakka-phone-halo" aria-hidden="true"></div>
+        <img src="images/img20.jpg" alt="Application RakkaCash V2">
+        <span class="rakka-phone-badge">
+          <span class="bgfi-star bgfi-star--sm"></span>
+          <span>V2 · 2026</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPITRE V · BGFI s'engage et culture d'entreprise
+     ============================================================ -->
+<section class="chapitre-divider chapitre-divider--bloom" id="chapitre-5" aria-labelledby="chapitre-5-title">
+  <div class="cd-canvas" aria-hidden="true">
+    <span class="cd-wash"></span>
+    <span class="cd-mesh"></span>
+    <span class="cd-grain"></span>
+    <span class="cd-figure"></span>
+    <span class="cd-numeral-ghost">V</span>
+    <span class="cd-spark cd-spark--a"></span>
+    <span class="cd-spark cd-spark--b"></span>
+    <span class="cd-spark cd-spark--c"></span>
+  </div>
+
+  <div class="container cd-inner">
+    <p class="cd-kicker reveal-up">
+      <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+      <span class="cd-kicker-text">Chapitre V</span>
+      <span class="cd-kicker-rule" aria-hidden="true"></span>
+      <span class="cd-kicker-count">5 / 8</span>
+    </p>
+
+    <div class="cd-head">
+      <span class="cd-numeral reveal-up" aria-hidden="true">V</span>
+      <div class="cd-headings">
+        <h2 class="cd-title reveal-up" id="chapitre-5-title" style="--rd:.06s">BGFI s’engage <em>et culture d’entreprise</em></h2>
+        <p class="cd-standfirst reveal-up" style="--rd:.12s">L’éducation, la santé, l’égalité, la fête&nbsp;: ce que nous défendons, et ce qui nous rassemble.</p>
+      </div>
+    </div>
+
+    <div class="cd-rule reveal-up" style="--rd:.16s" aria-hidden="true">
+      <span class="cd-rule-line"></span>
+      <span class="bgfi-star bgfi-star--sm"></span>
+      <span class="cd-rule-line"></span>
+    </div>
+
+    <div class="cd-foot reveal-up" style="--rd:.2s">
+      <ul class="cd-list" aria-label="Au sommaire de ce chapitre">
+        <li class="cd-item"><a href="#story-femme"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Gender Equality · mois de la femme</span><span class="cd-item-date">Mars 2026</span></a></li>
+        <li class="cd-item"><a href="#story-mai"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Fête du Travail</span><span class="cd-item-date">1<sup>er</sup> mai 2026</span></a></li>
+        <li class="cd-item"><a href="#story-ebola"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Minute SST</span><span class="cd-item-date">20 mai 2026</span></a></li>
+        <li class="cd-item"><a href="#story-fanzone"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Fanzone Coupe d’Afrique</span><span class="cd-item-date">Dès le 11 Juin 2026</span></a></li>
+      </ul>
+      <p class="cd-dateline"><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Quatre engagements · Mars — Juin 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · Mois de la femme — Split editorial (image right)
+     ============================================================ -->
+<section class="story-section magazine-right" id="story-femme">
+  <div class="container">
+    <div class="mag-grid reveal-up">
+      <div class="mag-content">
+        <div class="mag-meta">
+          <span class="story-month">Mars · 14</span>
+          <span class="mag-dot"></span>
+          <span class="story-rubric">Diversité &amp; Inclusion</span>
+        </div>
+        <h2 class="story-title">Clôture du <em>mois de la femme.</em></h2>
+        <p class="mag-lead">
+          À l'occasion du mois de la femme, BGFIBank RDC a organisé au <strong>Sheraton Hôtel</strong> une séance d'échange avec une avocate spécialisée sur les droits de la femme. Un moment d'écoute, d'apprentissage et de sororité, placé sous le signe de l'émancipation et de la responsabilisation.
+        </p>
+        <div class="lux-badges">
+          <span class="lux-badge"><span class="bgfi-star bgfi-star--xs"></span>Sheraton Hôtel</span>
+          <span class="lux-badge"><span class="bgfi-star bgfi-star--xs"></span>Droits &amp; Émancipation</span>
+          <span class="lux-badge"><span class="bgfi-star bgfi-star--xs"></span>14 mars 2026</span>
+        </div>
+      </div>
+      <div class="mag-visual mag-visual--right">
+        <div class="mag-frame women-frame">
+          <img class="women-photo women-photo--main" src="images/img17.jpg" alt="Clôture du mois de la femme BGFIBank RDC">
+          <img class="women-photo women-photo--team" src="images/2026/moisdelafemmemars1.jpg" alt="Collaboratrices de BGFIBank RDC réunies pour le mois de la femme" loading="lazy" decoding="async">
+          <span class="mag-frame-corner mag-frame-corner--tr"></span>
+          <span class="mag-frame-corner mag-frame-corner--bl"></span>
+        </div>
+        <div class="mag-caption">
+          <span class="bgfi-star bgfi-star--xs"></span>
+          <span>Sheraton · 14 mars 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · 1er mai — Split editorial
+     ============================================================ -->
+<section class="story-section magazine-left" id="story-mai">
+  <div class="container">
+    <div class="mag-grid reveal-up">
+      <div class="mag-visual mag-visual--left city-gallery" aria-label="Journée du Travail dans trois villes">
+        <figure class="city-photo city-photo--kolwezi"><img src="images/2026/KOLWEZI.jpg" alt="Équipe BGFIBank à Kolwezi pour la Journée du Travail" loading="lazy" decoding="async"><figcaption>Kinshasa</figcaption></figure>
+        <figure class="city-photo city-photo--kinshasa"><img src="images/2026/KINSHASA.jpg" alt="Équipe BGFIBank à Kinshasa pour la Journée du Travail" loading="lazy" decoding="async"><figcaption>Kolwezi</figcaption></figure>
+        <figure class="city-photo city-photo--lubumbashi"><img src="images/2026/LUBUMBASHI.jpg" alt="Équipe BGFIBank à Lubumbashi pour la Journée du Travail" loading="lazy" decoding="async"><figcaption>Lubumbashi</figcaption></figure>
+      </div>
+      <div class="mag-content">
+        <div class="mag-meta">
+          <span class="story-month">1er mai 2026</span>
+          <span class="mag-dot"></span>
+          <span class="story-rubric">Vie de la banque</span>
+        </div>
+        <h2 class="story-title">Journée internationale du Travail&nbsp;: <em>l'esprit d'équipe à l'honneur.</em></h2>
+        <p class="mag-lead">
+          Pour célébrer le 1er mai, les équipes de BGFIBank RDC se sont rassemblées autour d'une marche collective et d'activités sportives. Une matinée conviviale placée sous le signe du <strong>bien‑être, de la cohésion et de la fierté d'appartenir au Group BGFI</strong>.
+        </p>
+        <p>
+          Une journée où l'on rappelle que derrière chaque performance, il y a des femmes et des hommes engagés — la véritable richesse de la banque.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · Ebola — Split (image right)
+     ============================================================ -->
+<section class="story-section magazine-right" id="story-ebola">
+  <div class="container">
+    <div class="mag-grid reveal-up">
+      <div class="mag-content">
+        <div class="mag-meta">
+          <span class="story-month">Mai · 20</span>
+          <span class="mag-dot"></span>
+          <span class="story-rubric">Minute SST · Santé au travail</span>
+        </div>
+        <h2 class="story-title">Prévenir et se protéger <em>contre Ebola.</em></h2>
+        <p class="mag-lead">
+          Dès le début du mois de mai, BGFIBank RDC a lancé une <strong>campagne de sensibilisation à Ebola</strong> à travers deux sessions de <em>Minute SST</em>. Objectif&nbsp;: rappeler les gestes barrières, informer sur les modes de transmission et remettre à chaque collaborateur un <strong>kit de protection individuelle</strong>.
+        </p>
+        <ul class="lux-list">
+          <li><span class="bgfi-star bgfi-star--xs"></span><span>2 sessions de Minute SST</span></li>
+          <li><span class="bgfi-star bgfi-star--xs"></span><span>Kits gestes barrières distribués</span></li>
+          <li><span class="bgfi-star bgfi-star--xs"></span><span>Sensibilisation à tous les niveaux</span></li>
+        </ul>
+      </div>
+      <div class="mag-visual mag-visual--right">
+        <div class="mag-frame">
+          <img src="images/img22.jpg" alt="Campagne Ebola BGFIBank RDC">
+          <span class="mag-frame-corner mag-frame-corner--tr"></span>
+          <span class="mag-frame-corner mag-frame-corner--bl"></span>
+        </div>
+        <div class="mag-caption">
+          <span class="bgfi-star bgfi-star--xs"></span>
+          <span>Prévention · Mai 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPITRE V · Fanzone Coupe d'Afrique — Événement fédérateur
+     ============================================================ -->
+<section class="story-section double-story-section fanzone-section" id="story-fanzone" aria-labelledby="fanzone-title">
+  <div class="container reveal-up">
+    <div class="section-eyebrow center">
+      <span class="line"></span>
+      <span class="eyebrow-text"><span class="bgfi-star bgfi-star--xs"></span> Culture d'entreprise · Juin 2026 <span class="bgfi-star bgfi-star--xs"></span></span>
+      <span class="line"></span>
+    </div>
+    <h2 class="sr-only" id="fanzone-title">Fanzone Coupe d'Afrique</h2>
+    <div class="double-grid double-grid--solo">
+      <article class="double-card reveal-up" style="--rd:.05s">
+        <div class="double-visual">
+          <img src="images/2026/fanzone.jpg" alt="Supporter à la Fan Zone Coupe du Monde BGFIBank RDC" loading="lazy" decoding="async">
+          <span class="double-visual-veil"></span>
+        </div>
+        <div class="double-body">
+          <span class="story-month">Dès le 11 juin 2026</span>
+          <span class="story-rubric">Événement · Coupe du Monde</span>
+          <h3>Une Fanzone pour <em>vibrer ensemble.</em></h3>
+          <p>
+            À l'occasion de la Coupe du Monde, BGFIBank RDC a ouvert une <strong>Fanzone</strong> à la Galerie La Fontaine. Un lieu convivial pour partager les émotions du terrain en famille, entre collègues et avec la communauté BGFI.
+          </p>
+          <span class="double-corner"><span class="bgfi-star bgfi-star--sm"></span></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPITRE VI · Valeurs &amp; témoignages
+     ============================================================ -->
+<section class="chapitre-divider chapitre-divider--beam" id="chapitre-6" aria-labelledby="chapitre-6-title">
+  <div class="cd-canvas" aria-hidden="true">
+    <span class="cd-wash"></span>
+    <span class="cd-mesh"></span>
+    <span class="cd-grain"></span>
+    <span class="cd-figure"></span>
+    <span class="cd-numeral-ghost">VI</span>
+    <span class="cd-spark cd-spark--a"></span>
+    <span class="cd-spark cd-spark--b"></span>
+    <span class="cd-spark cd-spark--c"></span>
+  </div>
+
+  <div class="container cd-inner">
+    <p class="cd-kicker reveal-up">
+      <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+      <span class="cd-kicker-text">Chapitre VI</span>
+      <span class="cd-kicker-rule" aria-hidden="true"></span>
+      <span class="cd-kicker-count">6 / 8</span>
+    </p>
+
+    <div class="cd-head">
+      <span class="cd-numeral reveal-up" aria-hidden="true">VI</span>
+      <div class="cd-headings">
+        <h2 class="cd-title reveal-up" id="chapitre-6-title" style="--rd:.06s">Valeurs <em>&amp; témoignages</em></h2>
+        <p class="cd-standfirst reveal-up" style="--rd:.12s">Nos valeurs ne se décrètent pas&nbsp;: elles s’incarnent. Deux collaborateurs prennent la parole.</p>
+      </div>
+    </div>
+
+    <div class="cd-rule reveal-up" style="--rd:.16s" aria-hidden="true">
+      <span class="cd-rule-line"></span>
+      <span class="bgfi-star bgfi-star--sm"></span>
+      <span class="cd-rule-line"></span>
+    </div>
+
+    <div class="cd-foot reveal-up" style="--rd:.2s">
+      <ul class="cd-list" aria-label="Au sommaire de ce chapitre">
+        <li class="cd-item"><a href="#temoignages"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Cynthia Amani · valeur Intégrité</span><span class="cd-item-date">Témoignage</span></a></li>
+        <li class="cd-item"><a href="#temoignages"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Olivier Mak Makaba · valeur Travail</span><span class="cd-item-date">Témoignage</span></a></li>
+      </ul>
+      <p class="cd-dateline"><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Deux voix · Semestre 1 · 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TÉMOIGNAGES · Valeurs incarnées
+     ============================================================ -->
+<section class="testimonials-section" id="temoignages" aria-labelledby="testimonials-title">
+  <div class="container reveal-up">
+    <div class="testimonials-heading">
+      <p class="editorial-date"><span>Chapitre 07</span><i aria-hidden="true"></i><span>Valeurs · Témoignages</span></p>
+      <h2 class="section-title" id="testimonials-title">Nos valeurs, <em>incarnées.</em></h2>
+      <p class="section-lead">Au-delà des mots, des comportements quotidiens. Découvrez les visages et les engagements qui font vivre l’identité BGFI.</p>
+    </div>
+    <div class="testimonial-slider" data-testimonial-slider role="region" aria-roledescription="carousel" aria-label="Témoignages sur les valeurs BGFI">
+      <div class="testimonial-track" aria-live="polite">
+        <article class="testimonial-slide is-active" id="testimonial-integrite" data-slide="0" aria-label="1 sur 2">
+          <div class="testimonial-portrait testimonial-portrait--integrite">
+            <img class="testimonial-photo" src="images/2026/cynthia-amani.webp" alt="Portrait de Cynthia Amani" width="978" height="1024" loading="lazy" decoding="async">
+            <span class="testimonial-photo-veil" aria-hidden="true"></span>
+            <span class="testimonial-word" aria-hidden="true">Intégrité</span>
+            <span class="testimonial-ribbon">Valeur · Intégrité</span>
+            <div class="testimonial-identity">
+              <strong>Cynthia Amani</strong>
+              <span>Chef de mission · Audit interne</span>
+            </div>
+          </div>
+          <div class="testimonial-copy">
+            <span class="testimonial-value">Témoignage · Valeur Intégrité</span>
+            <h3>L’intégrité comme <em>réflexe quotidien.</em></h3>
+            <blockquote>À BGFIBank RDC, l’intégrité se traduit au quotidien par des comportements responsables et transparents. Les collaborateurs font preuve de vigilance en signalant les anomalies, en respectant les règles et en agissant dans l’intérêt de la banque et de ses clients.</blockquote>
+            <div class="testimonial-signoff"><strong>Cynthia Amani</strong><span>Audit interne</span></div>
+          </div>
+        </article>
+        <article class="testimonial-slide" id="testimonial-travail" data-slide="1" aria-hidden="true" aria-label="2 sur 2">
+          <div class="testimonial-portrait testimonial-portrait--travail">
+            <img class="testimonial-photo" src="images/2026/olivier_mak_makaba.webp" alt="Portrait d'Olivier Mak Makaba" width="1024" height="683" loading="lazy" decoding="async">
+            <span class="testimonial-photo-veil" aria-hidden="true"></span>
+            <span class="testimonial-word" aria-hidden="true">Travail</span>
+            <span class="testimonial-ribbon">Valeur · Travail</span>
+            <div class="testimonial-identity">
+              <strong>Olivier Mak Makaba</strong>
+              <span>Collaborateur · BGFIBank RDC</span>
+            </div>
+          </div>
+          <div class="testimonial-copy">
+            <span class="testimonial-value">Témoignage · Valeur Travail</span>
+            <h3>La rigueur au service <em>du collectif.</em></h3>
+            <blockquote>La valeur Travail se reflète dans la rigueur, l’organisation et l’engagement de chacun. Cette discipline fait partie intégrante de notre réussite collective.</blockquote>
+            <div class="testimonial-tags" aria-label="Principes clés"><span>Rigueur</span><span>Organisation</span><span>Engagement</span></div>
+            <div class="testimonial-signoff"><strong>Olivier Mak Makaba</strong><span>BGFIBank RDC</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="testimonial-controls">
+        <button type="button" data-testimonial-prev aria-label="Témoignage précédent">←</button>
+        <div class="testimonial-dots" role="tablist" aria-label="Choisir un témoignage">
+          <button class="is-active" type="button" role="tab" data-testimonial-dot="0" aria-controls="testimonial-integrite" aria-label="Afficher le témoignage de Cynthia Amani"></button>
+          <button type="button" role="tab" data-testimonial-dot="1" aria-controls="testimonial-travail" aria-label="Afficher le témoignage d’Olivier Mak Makaba"></button>
+        </div>
+        <button type="button" data-testimonial-next aria-label="Témoignage suivant">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPITRE VII · Formation — Développement des talents
+     ============================================================ -->
+<section class="chapitre-divider chapitre-divider--ascend" id="chapitre-7" aria-labelledby="chapitre-7-title">
+  <div class="cd-canvas" aria-hidden="true">
+    <span class="cd-wash"></span>
+    <span class="cd-mesh"></span>
+    <span class="cd-grain"></span>
+    <span class="cd-figure"></span>
+    <span class="cd-numeral-ghost">VII</span>
+    <span class="cd-spark cd-spark--a"></span>
+    <span class="cd-spark cd-spark--b"></span>
+    <span class="cd-spark cd-spark--c"></span>
+  </div>
+
+  <div class="container cd-inner">
+    <p class="cd-kicker reveal-up">
+      <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+      <span class="cd-kicker-text">Chapitre VII</span>
+      <span class="cd-kicker-rule" aria-hidden="true"></span>
+      <span class="cd-kicker-count">7 / 8</span>
+    </p>
+
+    <div class="cd-head">
+      <span class="cd-numeral reveal-up" aria-hidden="true">VII</span>
+      <div class="cd-headings">
+        <h2 class="cd-title reveal-up" id="chapitre-7-title" style="--rd:.06s">Formation<br/><em>développement des talents</em></h2>
+        <p class="cd-standfirst reveal-up" style="--rd:.12s">Attirer, former, intégrer&nbsp;: le semestre où la montée en compétences devient un programme.</p>
+      </div>
+    </div>
+
+    <div class="cd-rule reveal-up" style="--rd:.16s" aria-hidden="true">
+      <span class="cd-rule-line"></span>
+      <span class="bgfi-star bgfi-star--sm"></span>
+      <span class="cd-rule-line"></span>
+    </div>
+
+    <div class="cd-foot reveal-up" style="--rd:.2s">
+      <ul class="cd-list" aria-label="Au sommaire de ce chapitre">
+        <li class="cd-item"><a href="#story-education"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Partenariats dans le secteur éducatif</span><span class="cd-item-date">Février 2026</span></a></li>
+        <li class="cd-item"><a href="#story-etoiles"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Programme BGFI ÉTOILE</span><span class="cd-item-date">Février 2026</span></a></li>
+        <li class="cd-item"><a href="#story-formations"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Formation ARC EN CIEL DISC des chefs de départements</span><span class="cd-item-date">Du 23 avril au 8 mai 2026</span></a></li>
+        <li class="cd-item"><a href="#story-formations"><span class="cd-item-star bgfi-star bgfi-star--xs" aria-hidden="true"></span><span class="cd-item-text">Formation Anglais — Lancement</span><span class="cd-item-date">5 juin 2026</span></a></li>
+      </ul>
+      <p class="cd-dateline"><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Quatre programmes · Février — Juin 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · Éducation — asymmetric magazine layout
+     ============================================================ -->
+<section class="story-section magazine-left" id="story-education">
+  <div class="container">
+    <div class="mag-grid reveal-up">
+      <div class="mag-visual mag-visual--left education-gallery" aria-label="Mission de BGFI Business School à Kananga">
+        <figure class="education-photo education-photo--main">
+          <img src="images/2026/bgfibusinessschool1fev.jpg" alt="Réunion de travail du Directeur Général de BBS à Kananga" loading="lazy" decoding="async">
+        </figure>
+        <figure class="education-photo education-photo--portrait">
+          <img src="images/2026/bgfibusinessschool2.jpg" alt="Délégation de BGFI Business School reçue à Kananga" loading="lazy" decoding="async">
+        </figure>
+        <div class="mag-caption education-caption">
+          <span class="bgfi-star bgfi-star--xs"></span>
+          <span>PARTENARIAT · Février 2026</span>
+        </div>
+      </div>
+      <div class="mag-content">
+        <div class="mag-meta">
+          <span class="story-month">Février</span>
+          <span class="mag-dot"></span>
+          <span class="story-rubric">Formation · Développement des talents</span>
+        </div>
+        <h2 class="story-title">BGFIBank renforce ses partenariats dans <em>le secteur éducatif.</em></h2>
+        <div class="education-callout">
+          <span class="education-callout-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="m3 10 9-5 9 5-9 5-9-5Z"/><path d="M7 12.5V17c3 2 7 2 10 0v-4.5M21 10v6"/></svg>
+          </span>
+          <p>Le Directeur Général de BBS s’est rendu à <strong>l’Ecole trilingue de Kananga</strong>.</p>
+        </div>
+        <p class="mag-lead">
+          En février, le Directeur Général de <strong>BGFI Business School (BBS)</strong> s'est rendu à Kinshasa dans le cadre des démarches visant à nouer un partenariat avec une université locale. Une étape stratégique pour rapprocher l'école du terrain congolais et former les futurs talents des métiers de la banque et de la finance.
+        </p>
+        <p>
+          Cette mission a également été marquée par une rencontre avec <strong>Son Excellence Madame la Ministre de l'Éducation Nationale</strong>, soulignant l'engagement institutionnel de BGFI dans le développement du capital humain de la République Démocratique du Congo.
+        </p>
+        <blockquote class="pull-quote-lux">
+          <span class="pq-mark" aria-hidden="true">"</span>
+          <p>Former les talents d'aujourd'hui, c'est bâtir la banque de demain.</p>
+          <footer><span class="bgfi-star bgfi-star--xs"></span> BGFI Business School</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STORY · BGFI Étoiles — Talents de demain
+     ============================================================ -->
+<section class="story-section etoiles-section" id="story-etoiles" aria-labelledby="etoiles-title">
+  <div class="etoiles-orbit" aria-hidden="true"><span class="bgfi-star bgfi-star--xl"></span></div>
+  <div class="container etoiles-grid reveal-up">
+    <figure class="etoiles-visual">
+      <img src="images/2026/BGFI-U00e9toile-fevrier.jpg" alt="Présentation du programme BGFI Étoiles dédié aux jeunes diplômés" loading="lazy" decoding="async">
+      <figcaption><span class="bgfi-star bgfi-star--xs"></span> Programme talents · Promotion 2026</figcaption>
+    </figure>
+    <div class="etoiles-copy">
+      <p class="editorial-date"><span>Kinshasa</span><i aria-hidden="true"></i><span>Février 2026</span></p>
+      <span class="etoiles-label">Capital humain · Relève</span>
+      <h2 class="story-title" id="etoiles-title">BGFI Étoiles&nbsp;: préparer <em>les talents de demain.</em></h2>
+      <p class="etoiles-lead">BGFI Étoiles est le programme de BGFIBank RDC lancé en février, dédié aux jeunes diplômés à fort potentiel.</p>
+      <p>Il vise à attirer, former et intégrer de nouveaux talents afin de constituer un vivier de compétences et préparer la relève de la Banque.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPITRE VII · Formations — ARC EN CIEL DISC & Anglais
+     ============================================================ -->
+<section class="story-section double-story-section formations-section" id="story-formations" aria-labelledby="formations-title">
+  <div class="container reveal-up">
+    <div class="section-eyebrow center">
+      <span class="line"></span>
+      <span class="eyebrow-text"><span class="bgfi-star bgfi-star--xs"></span> Deux formations · Avril — Juin 2026 <span class="bgfi-star bgfi-star--xs"></span></span>
+      <span class="line"></span>
+    </div>
+    <h2 class="sr-only" id="formations-title">Formations du semestre</h2>
+    <div class="double-grid">
+      <article class="double-card reveal-up" style="--rd:.05s">
+        <div class="double-visual double-visual--training">
+          <img src="images/2026/65.jpg" alt="Chefs de départements BGFIBank RDC participant à la formation ARC EN CIEL DISC animée par INNOVIA Ventures" width="1024" height="768" loading="lazy" decoding="async">
+          <span class="double-visual-veil"></span>
+        </div>
+        <div class="double-body">
+          <span class="story-month">23 avril au 8 mai 2026</span>
+          <span class="story-rubric">Formation · INNOVIA Ventures</span>
+          <h3>Formation <em>ARC EN CIEL DISC.</em></h3>
+          <p>
+            Dispensée par le cabinet <strong>INNOVIA Ventures</strong> auprès de tous nos chefs de département, cette formation leur a permis de mieux se connaître grâce à leur profil personnel et professionnel, et de mieux comprendre leur environnement pour travailler ensemble efficacement.
+          </p>
+          <span class="double-corner"><span class="bgfi-star bgfi-star--sm"></span></span>
+        </div>
+      </article>
+      <article class="double-card reveal-up" style="--rd:.15s">
+        <div class="double-visual">
+          <img src="images/img18.jpg" alt="Cours d'anglais BGFI">
+          <span class="double-visual-veil"></span>
+        </div>
+        <div class="double-body">
+          <span class="story-month">5 juin 2026</span>
+          <span class="story-rubric">Formation &amp; Développement</span>
+          <h3>L'anglais, <em>un atout pour grandir ensemble.</em></h3>
+          <p>
+            Le 5 juin, BGFIBank RDC a lancé son programme de <strong>cours d'anglais</strong> avec <strong>28 participants</strong>. Une nouvelle compétence, une nouvelle ouverture — pour continuer à parler la langue de l'ambition internationale.
+          </p>
+          <span class="double-corner"><span class="bgfi-star bgfi-star--sm"></span></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPITRE VIII · Naissances et mariages
+     ============================================================ -->
+<section class="chapitre-divider chapitre-divider--celebration" id="chapitre-8" aria-labelledby="chapitre-8-title">
+  <div class="cd-canvas" aria-hidden="true">
+    <span class="cd-wash"></span>
+    <span class="cd-mesh"></span>
+    <span class="cd-grain"></span>
+    <span class="cd-figure"></span>
+    <span class="cd-numeral-ghost">VIII</span>
+    <span class="cd-spark cd-spark--a"></span>
+    <span class="cd-spark cd-spark--b"></span>
+    <span class="cd-spark cd-spark--c"></span>
+  </div>
+
+  <div class="container cd-inner">
+    <p class="cd-kicker reveal-up">
+      <span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span>
+      <span class="cd-kicker-text">Chapitre VIII</span>
+      <span class="cd-kicker-rule" aria-hidden="true"></span>
+      <span class="cd-kicker-count">8 / 8</span>
+    </p>
+
+    <div class="cd-head">
+      <span class="cd-numeral reveal-up" aria-hidden="true">VIII</span>
+      <div class="cd-headings">
+        <h2 class="cd-title reveal-up" id="chapitre-8-title" style="--rd:.06s">Naissances <em>et mariages</em></h2>
+        <p class="cd-standfirst reveal-up" style="--rd:.12s">La famille BGFI s’agrandit et se célèbre. Onze naissances, dont des triplés, et cinq unions.</p>
+      </div>
+    </div>
+
+    <div class="cd-rule reveal-up" style="--rd:.16s" aria-hidden="true">
+      <span class="cd-rule-line"></span>
+      <span class="bgfi-star bgfi-star--sm"></span>
+      <span class="cd-rule-line"></span>
+    </div>
+
+    <div class="cd-foot reveal-up" style="--rd:.2s">
+      <ul class="cd-list cd-list--picto" aria-label="Au sommaire de ce chapitre">
+        <li class="cd-item"><a href="#famille-variation-b">
+          <span class="cd-picto" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none"><path d="M13 31h43c0-13-10-23-23-23v23M9 23h8l6 27h29a9 9 0 0 0 9-9V31"/><path d="M27 50v3M50 50v3"/><circle cx="28" cy="60" r="5"/><circle cx="50" cy="60" r="5"/><path d="M39 18h8M43 14v8"/></svg>
+          </span>
+          <span class="cd-item-text">Naissances : 11 dont des triplés</span>
+          <span class="cd-item-date">11 naissances</span>
+        </a></li>
+        <li class="cd-item"><a href="#famille-variation-b">
+          <span class="cd-picto" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none"><circle cx="28" cy="43" r="17"/><circle cx="45" cy="43" r="17"/><path d="m21 17 7-10 7 10-7 6-7-6Zm17 0L45 7l7 10-7 6-7-6Z"/><path d="M13 11h7M16.5 7.5v7M53 11h7M56.5 7.5v7"/></svg>
+          </span>
+          <span class="cd-item-text">Mariage : 5</span>
+          <span class="cd-item-date">5 mariages</span>
+        </a></li>
+      </ul>
+      <p class="cd-dateline"><span class="bgfi-star bgfi-star--xs" aria-hidden="true"></span> Les célébrations du semestre</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAMILLE BGFI — Variation B · Icônes ligne forte sans fond
+     ============================================================ -->
+<section class="family-section family-section--variation family-section--icon-linear" id="famille-variation-b" aria-labelledby="famille-variation-b-title">
+  <div class="family-bg" aria-hidden="true">
+    <span class="bgfi-star bgfi-star--xl family-decor"></span>
+  </div>
+  <div class="container reveal-up">
+    <div class="section-eyebrow center">
+      <span class="line"></span>
+      <span class="eyebrow-text"><span class="bgfi-star bgfi-star--xs"></span> Famille BGFI<span class="bgfi-star bgfi-star--xs"></span></span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title center" id="famille-variation-b-title">Naissances <em>&amp; mariages.</em></h2>
+    <p class="section-lead center">
+      Ce semestre, la famille BGFI s'agrandit et se célèbre. Nos plus chaleureuses félicitations à tous les collaborateurs concernés — et bienvenue à nos nouveaux petits BGFI&nbsp;!
+    </p>
+    <div class="family-cards">
+      <article class="family-card family-card--birth reveal-up" style="--rd:.05s">
+        <span class="family-pictogram" aria-hidden="true">
+          <svg viewBox="0 0 72 72" fill="none"><path d="M13 31h43c0-13-10-23-23-23v23M9 23h8l6 27h29a9 9 0 0 0 9-9V31"/><path d="M27 50v3M50 50v3"/><circle cx="28" cy="60" r="5"/><circle cx="50" cy="60" r="5"/><path d="M39 18h8M43 14v8"/></svg>
+        </span>
+        <div class="family-value" data-target="11" data-suffix="">11</div>
+        <div class="family-label">Naissances</div>
+        <div class="family-note">De nouveaux sourires dans la famille BGFI, dont une heureuse naissance de triplés.</div>
+        <div class="family-progress" aria-hidden="true"><span style="--progress:100%"></span></div>
+        <span class="family-metric">69 % des célébrations du semestre</span>
+      </article>
+      <article class="family-card family-card--wedding reveal-up" style="--rd:.15s">
+        <span class="family-pictogram" aria-hidden="true">
+          <svg viewBox="0 0 72 72" fill="none"><circle cx="28" cy="43" r="17"/><circle cx="45" cy="43" r="17"/><path d="m21 17 7-10 7 10-7 6-7-6Zm17 0L45 7l7 10-7 6-7-6Z"/><path d="M13 11h7M16.5 7.5v7M53 11h7M56.5 7.5v7"/></svg>
+        </span>
+        <div class="family-value" data-target="5" data-suffix="">5</div>
+        <div class="family-label">Mariages</div>
+        <div class="family-note">Cinq unions célébrées avec chaleur, solidarité et les vœux de toute la Banque.</div>
+        <div class="family-progress" aria-hidden="true"><span style="--progress:45%"></span></div>
+        <span class="family-metric">31 % des célébrations du semestre</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAMILLE BGFI — Naissances & mariages
+     ============================================================ -->
+<section style ="Display:none" class="family-section" id="famille">
+  <div class="family-bg" aria-hidden="true">
+    <span class="bgfi-star bgfi-star--xl family-decor"></span>
+  </div>
+  <div class="container reveal-up">
+    <div class="section-eyebrow center">
+      <span class="line"></span>
+      <span class="eyebrow-text"><span class="bgfi-star bgfi-star--xs"></span> Famille BGFI <span class="bgfi-star bgfi-star--xs"></span></span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title center">Naissances <em>&amp; mariages.</em></h2>
+    <p class="section-lead center">
+      Ce semestre, la famille BGFI s'agrandit et se célèbre. Nos plus chaleureuses félicitations à tous les collaborateurs concernés — et bienvenue à nos nouveaux petits BGFI&nbsp;!
+    </p>
+    <div class="family-cards">
+      <article class="family-card family-card--birth reveal-up" style="--rd:.05s">
+        <span class="family-pictogram" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M14 29h35a17 17 0 0 0-17-17v17H14l4 14h27a8 8 0 0 0 8-8v-6"/><path d="M10 23h7l3 20M23 43v4M44 43v4"/><circle cx="24" cy="52" r="4"/><circle cx="44" cy="52" r="4"/></svg></span>
+        <div class="family-value" data-target="11" data-suffix="">11</div>
+        <div class="family-label">Naissances</div>
+        <div class="family-note">De nouveaux sourires dans la famille BGFI, dont une heureuse naissance de triplés.</div>
+        <div class="family-progress" aria-hidden="true"><span style="--progress:100%"></span></div>
+        <span class="family-metric">69 % des célébrations du semestre</span>
+      </article>
+      <article class="family-card family-card--wedding reveal-up" style="--rd:.15s">
+        <span class="family-pictogram" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><circle cx="25" cy="37" r="14"/><circle cx="39" cy="37" r="14"/><path d="m19 17 6-8 6 8-6 5-6-5Zm14 0 6-8 6 8-6 5-6-5Z"/><path d="M22 9h6M36 9h6"/></svg></span>
+        <div class="family-value" data-target="5" data-suffix="">5</div>
+        <div class="family-label">Mariages</div>
+        <div class="family-note">Cinq unions célébrées avec chaleur, solidarité et les vœux de toute la Banque.</div>
+        <div class="family-progress" aria-hidden="true"><span style="--progress:45%"></span></div>
+        <span class="family-metric">31 % des célébrations du semestre</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAMILLE BGFI — Variation A · Icônes pleines sans fond
+     ============================================================ -->
+<section style ="Display:none" class="family-section family-section--variation family-section--icon-solid" id="famille-variation-a" aria-labelledby="famille-variation-a-title">
+  <div class="family-bg" aria-hidden="true">
+    <span class="bgfi-star bgfi-star--xl family-decor"></span>
+  </div>
+  <div class="container reveal-up">
+    <div class="section-eyebrow center">
+      <span class="line"></span>
+      <span class="eyebrow-text"><span class="bgfi-star bgfi-star--xs"></span> Famille BGFI · Variation A <span class="bgfi-star bgfi-star--xs"></span></span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title center" id="famille-variation-a-title">Naissances <em>&amp; mariages.</em></h2>
+    <p class="section-lead center">
+      Ce semestre, la famille BGFI s'agrandit et se célèbre. Nos plus chaleureuses félicitations à tous les collaborateurs concernés — et bienvenue à nos nouveaux petits BGFI&nbsp;!
+    </p>
+    <div class="family-cards">
+      <article class="family-card family-card--birth reveal-up" style="--rd:.05s">
+        <span class="family-pictogram" aria-hidden="true">
+          <svg viewBox="0 0 72 72"><path d="M34 8c15 0 27 12 27 27H34V8ZM9 27h9l5 23h31a8 8 0 0 0 8-8v-7H19l-2-8H9Z"/><circle cx="28" cy="59" r="6"/><circle cx="53" cy="59" r="6"/></svg>
+        </span>
+        <div class="family-value" data-target="11" data-suffix="">11</div>
+        <div class="family-label">Naissances</div>
+        <div class="family-note">De nouveaux sourires dans la famille BGFI, dont une heureuse naissance de triplés.</div>
+        <div class="family-progress" aria-hidden="true"><span style="--progress:100%"></span></div>
+        <span class="family-metric">69 % des célébrations du semestre</span>
+      </article>
+      <article class="family-card family-card--wedding reveal-up" style="--rd:.15s">
+        <span class="family-pictogram" aria-hidden="true">
+          <svg viewBox="0 0 72 72" fill="none"><circle cx="28" cy="42" r="16"/><circle cx="45" cy="42" r="16"/><path d="m20 16 8-10 8 10-8 7-8-7Zm17 0L45 6l8 10-8 7-8-7Z"/></svg>
+        </span>
+        <div class="family-value" data-target="5" data-suffix="">5</div>
+        <div class="family-label">Mariages</div>
+        <div class="family-note">Cinq unions célébrées avec chaleur, solidarité et les vœux de toute la Banque.</div>
+        <div class="family-progress" aria-hidden="true"><span style="--progress:45%"></span></div>
+        <span class="family-metric">31 % des célébrations du semestre</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     AGENDA · Timeline luxueuse
+     ============================================================ -->
+<section class="agenda-section" id="agenda">
+  <div class="agenda-bg" aria-hidden="true">
+    <span class="bgfi-star bgfi-star--xl agenda-decor-a"></span>
+    <span class="bgfi-star bgfi-star--lg agenda-decor-b"></span>
+  </div>
+  <div class="container reveal-up">
+    <div class="section-eyebrow center">
+      <span class="line"></span>
+      <span class="eyebrow-text"><span class="bgfi-star bgfi-star--xs"></span> Chronologie du semestre <span class="bgfi-star bgfi-star--xs"></span></span>
+      <span class="line"></span>
+    </div>
+    <h2 class="section-title center">Six mois, <em>en un coup d'œil.</em></h2>
+    <p class="section-lead center">
+      Une chronologie éditoriale, chapitre après chapitre — la partition du semestre.
+    </p>
+
+    <ol class="timeline-lux">
+      <li class="tl-item reveal-up" style="--rd:.05s">
+        <span class="tl-star"><span class="bgfi-star bgfi-star--sm"></span></span>
+        <div class="tl-card">
+          <span class="tl-month">Janvier</span>
+          <h4>Nous‑mêmes, Nous‑mêmes</h4>
+          <p>Soirée d'ouverture — l'esprit d'équipe qui donne le ton de 2026.</p>
+        </div>
+      </li>
+      <li class="tl-item reveal-up" style="--rd:.1s">
+        <span class="tl-star"><span class="bgfi-star bgfi-star--sm"></span></span>
+        <div class="tl-card">
+          <span class="tl-month">Février</span>
+          <h4>BBS à Kananga</h4>
+          <p>Nouveau partenariat éducatif — rencontre avec la Ministre de l'Éducation.</p>
+        </div>
+      </li>
+      <li class="tl-item reveal-up" style="--rd:.15s">
+        <span class="tl-star"><span class="bgfi-star bgfi-star--sm"></span></span>
+        <div class="tl-card">
+          <span class="tl-month">Mars</span>
+          <h4>Abidjan · Performance · Mois de la femme</h4>
+          <p>La vision BGFI 2030 se partage&nbsp;; les résultats 2025 se célèbrent.</p>
+        </div>
+      </li>
+      <li class="tl-item reveal-up" style="--rd:.2s">
+        <span class="tl-star"><span class="bgfi-star bgfi-star--sm"></span></span>
+        <div class="tl-card">
+          <span class="tl-month">Avril</span>
+          <h4>Transformation digitale · Agence Muanda</h4>
+          <p>25 référents à bord&nbsp;; une nouvelle agence sur la côte atlantique.</p>
+        </div>
+      </li>
+      <li class="tl-item reveal-up" style="--rd:.25s">
+        <span class="tl-star"><span class="bgfi-star bgfi-star--sm"></span></span>
+        <div class="tl-card">
+          <span class="tl-month">Mai</span>
+          <h4>KBM Kolwezi · Ebola · RakkaCash V2</h4>
+          <p>Cap sur le minier, prévention santé, innovation digitale.</p>
+        </div>
+      </li>
+      <li class="tl-item reveal-up" style="--rd:.3s">
+        <span class="tl-star"><span class="bgfi-star bgfi-star--sm"></span></span>
+        <div class="tl-card">
+          <span class="tl-month">Juin</span>
+          <h4>BGFI Tour · Mining Week · Fanzone · English</h4>
+          <p>Un mois d'apothéose entre sport, business et convivialité.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABONNEMENT — Recevez le prochain numéro
+     ============================================================ -->
+<section class="subscribe-section" id="abonnement" aria-labelledby="sub-title">
+  <div class="sub-bg" aria-hidden="true">
+    <span class="sub-veil"></span>
+    <span class="sub-aurora"></span>
+    <span class="sub-grid"></span>
+    <span class="sub-stars"></span>
+  </div>
+
+  <div class="container sub-inner">
+    <!-- LEFT — editorial copy -->
+    <div class="sub-copy reveal-up">
+      <span class="sub-eyebrow">
+        <span class="rule"></span>
+        <span class="bgfi-star" aria-hidden="true"></span>
+        Abonnement · N°01 · S1 2026
+      </span>
+
+      <h2 class="sub-title" id="sub-title">
+        Recevez le prochain numéro
+        <em>dès sa parution.</em>
+      </h2>
+
+      <p class="sub-lead">
+        Deux fois par an, le Département de la Communication Interne réunit les temps forts de
+        BGFIBank RDC dans un numéro <strong>sans publicité</strong>, pensé pour
+        être lu d'un bout à l'autre. Laissez‑nous votre adresse : vous serez
+        parmi les premiers à l'ouvrir.
+      </p>
+
+      <div class="sub-stats">
+        <div class="sub-stat">
+          <span class="sub-stat-value">2<small>× / an</small></span>
+          <span class="sub-stat-label">Parutions</span>
+        </div>
+        <div class="sub-stat">
+          <span class="sub-stat-value">12<small>min</small></span>
+          <span class="sub-stat-label">De lecture</span>
+        </div>
+        <div class="sub-stat">
+          <span class="sub-stat-value">0<small>pub</small></span>
+          <span class="sub-stat-label">Publicité</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT — subscriber card -->
+    <div class="sub-card-wrap reveal-up" style="--rd:.12s">
+      <div class="sub-card">
+        <span class="sub-seal" aria-hidden="true">
+          <span class="bgfi-star"></span>
+        </span>
+
+        <span class="sub-card-label">Carte d'abonné · Édition semestrielle</span>
+
+        <form class="sub-form" id="subForm" novalidate>
+          <div class="sub-field">
+            <input type="email" id="subEmail" name="email" class="sub-input"
+                   placeholder="prenom.nom@exemple.cd" autocomplete="email" required>
+            <label for="subEmail">Votre adresse e‑mail</label>
+          </div>
+
+          <button type="submit" class="sub-submit">
+            <span>
+              <span class="bgfi-star" aria-hidden="true"></span>
+              S'abonner au magazine
+            </span>
+          </button>
+
+          <p class="sub-fineprint">
+            Uniquement le magazine, deux fois par an. Désinscription en un clic —
+            <a href="#abonnement">confidentialité garantie</a>.
+          </p>
+
+          <p class="sub-note" tabindex="-1">
+            <span class="bgfi-star" aria-hidden="true"></span>
+            <span>Merci — votre inscription est enregistrée. Le numéro N°02 · S2 2026
+            vous parviendra dès sa parution.</span>
+          </p>
+        </form>
+      </div>
+
+      <div class="sub-issues" aria-hidden="true">
+        <span class="dot"></span>
+        <span>N°01 · S1 2026</span>
+        <span class="track"></span>
+        <span>N°02 · S2 2026</span>
+        <span class="dot next"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINALE — The emotional ending of the magazine
+     ============================================================ -->
+<section class="finale" id="finale" aria-labelledby="finale-title">
+  <!-- Ambient sky -->
+  <div class="finale-sky" aria-hidden="true">
+    <span class="finale-base"></span>
+    <span class="finale-depth"></span>
+    <span class="finale-halo"></span>
+    <svg class="finale-rings" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" focusable="false">
+      <circle class="r1" cx="50" cy="50" r="21" pathLength="100"/>
+      <circle class="r2" cx="50" cy="50" r="30" pathLength="100"/>
+      <circle class="r3" cx="50" cy="50" r="39" pathLength="100"/>
+      <circle class="r4" cx="50" cy="50" r="48" pathLength="100"/>
+    </svg>
+    <span class="finale-dust"></span>
+  </div>
+
+  <!-- Animated BGFI star particles -->
+  <canvas class="finale-canvas" aria-hidden="true"></canvas>
+  <span class="finale-grain" aria-hidden="true"></span>
+
+  <div class="finale-inner">
+    <div class="finale-medallion finale-medallion--lockup">
+      <span class="orbit-star orbit-star--1" aria-hidden="true"></span>
+      <span class="orbit-star orbit-star--2" aria-hidden="true"></span>
+      <span class="orbit-star orbit-star--3" aria-hidden="true"></span>
+      <img src="images/logo-lockup-light.png" alt="BGFIBank" class="finale-mark" width="1200" height="246">
+    </div>
+
+    <span class="finale-eyebrow">En conclusion · BGFI Lisolo N°01</span>
+
+    <h2 class="finale-title" id="finale-title">
+      <span class="w" style="--w:0">Ensemble, nous bâtissons</span>
+      <span class="w" style="--w:1"><em>le meilleur</em></span>
+      <span class="w finale-outline" style="--w:2">pour BGFIBank RDC.</span>
+    </h2>
+
+    <p class="finale-text">
+      Une banque performante, humaine et durable se construit chaque jour, par chacun d’entre nous. Merci pour votre engagement quotidien.
+    </p>
+
+    <div class="finale-divider" aria-hidden="true">
+      <i></i>
+      <span class="bgfi-star bgfi-star--xs"></span>
+      <span class="bgfi-star bgfi-star--sm"></span>
+      <span class="bgfi-star bgfi-star--xs"></span>
+      <i></i>
+    </div>
+
+    <p class="finale-signature">
+      <span class="who">Département de la Communication Interne</span>
+      <span class="where">BGFIBank RDC · Kinshasa</span>
+    </p>
+
+    <div class="finale-actions finale-colophon">
+      <span>BGFIBANK RDC · BGFI LISOLO</span>
+      <span>ÉDITION 2026 · N°01</span>
+      <span>© 2026 BGFI BANK — TOUS DROITS RÉSERVÉS</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="footer-bg" aria-hidden="true">
+    <span class="bgfi-star bgfi-star--xl footer-decor"></span>
+  </div>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo-lockup-light.png" alt="BGFIBank" width="1200" height="246">
+      <p>BGFIBank RDC · S.A.<br/><em>Actus Newsletter · Semestre 1 · 2026</em></p>
+    </div>
+    <div class="footer-links">
+      <h5><span class="bgfi-star bgfi-star--xs"></span> Le numéro</h5>
+      <a href="#chapitre-1">Édito du DG</a>
+      <a href="#chapitre-2">Indicateurs</a>
+      <a href="#chapitre-3">Vie sociale</a>
+      <a href="#chapitre-8">Famille BGFI</a>
+    </div>
+    <div class="footer-social">
+      <h5><span class="bgfi-star bgfi-star--xs"></span> Restons connectés</h5>
+  <p><a href="https://www.groupebgfibank.com" target="_blank" rel="noopener noreferrer">www.groupebgfibank.com</a></p>
+      <div class="social-row">
+        <span aria-label="Facebook">f</span>
+        <span aria-label="LinkedIn">in</span>
+        <span aria-label="X">𝕏</span>
+        <span aria-label="YouTube">▶</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copy">
+    <span>© 2026 BGFIBank RDC — Tous droits réservés</span>
+    <span><span class="bgfi-star bgfi-star--xs"></span> Édité par le Département de la Communication Interne</span>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+  <span class="btt-star"><span class="bgfi-star bgfi-star--xs"></span></span>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="js/main.js"></script>
+<script src="js/hero-orbit.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/finale.js"></script>
+<script src="js/chapter-slider.js"></script>
+</body>
+</html>
