@@ -13,11 +13,9 @@ index.html is the local browser preview. No mail is sent by this script.
 from __future__ import annotations
 
 import argparse
-import hashlib
 import html
 import json
 import re
-from collections import Counter
 from email.message import EmailMessage
 from email.policy import SMTP
 from pathlib import Path
@@ -272,7 +270,7 @@ def render(node, width=596, dark=False):
         return paragraph('• ' + inline(node, dark))
     # Group inline siblings in one text block instead of manufacturing line breaks.
     children = list(node.children)
-    if all(isinstance(c, (NavigableString, Comment)) or c.name in
+    if not node.find('img') and all(isinstance(c, (NavigableString, Comment)) or c.name in
            ('span', 'strong', 'b', 'em', 'i', 'sup', 'sub', 'br', 'a') for c in children):
         return paragraph(inline(node, dark))
     return ''.join(render(c, width, dark) for c in children)
@@ -443,7 +441,7 @@ def main():
     for filename in sorted(USED):
         replacement = (ARGS.asset_base_url.rstrip('/') + '/' + filename if ARGS.asset_base_url
                        else 'cid:' + filename + '@bgfi-lisolo')
-        email_html = email_html.replace('assets/' + filename, replacement)
+        email_html = email_html.replace('assets/' + filename, esc(replacement))
     (OUT / 'newsletter.html').write_text(email_html)
     msg = EmailMessage(policy=SMTP)
     msg['Subject'] = 'BGFI Lisolo — Édition N°1 — Juin 2026'

@@ -1,8 +1,8 @@
 {
   "source_html_bytes": 144543,
-  "email_html_bytes": 86308,
+  "email_html_bytes": 87199,
   "gmail_clipping_note": "Below the approximately 102 KB clipping threshold; recheck after sender tracking/link rewriting.",
-  "mime_bytes": 7273899,
+  "mime_bytes": 7279422,
   "plain_text_bytes": 17480,
   "source_unchanged": true,
   "visible_sections_preserved": [
@@ -455,25 +455,25 @@
       "source": "images/flags/es.svg",
       "bytes": 664,
       "format": "SVG",
-      "email_asset": null
+      "email_asset": "flag-es.png"
     },
     {
       "source": "images/flags/fr.svg",
       "bytes": 272,
       "format": "SVG",
-      "email_asset": null
+      "email_asset": "flag-fr.png"
     },
     {
       "source": "images/flags/tn.svg",
       "bytes": 477,
       "format": "SVG",
-      "email_asset": null
+      "email_asset": "flag-tn.png"
     },
     {
       "source": "images/flags/tr.svg",
       "bytes": 352,
       "format": "SVG",
-      "email_asset": null
+      "email_asset": "flag-tr.png"
     },
     {
       "source": "images/img01.jpg",
@@ -887,6 +887,22 @@
     {
       "file": "dg-portrait.jpg",
       "bytes": 112126
+    },
+    {
+      "file": "flag-es.png",
+      "bytes": 369
+    },
+    {
+      "file": "flag-fr.png",
+      "bytes": 173
+    },
+    {
+      "file": "flag-tn.png",
+      "bytes": 1192
+    },
+    {
+      "file": "flag-tr.png",
+      "bytes": 988
     },
     {
       "file": "icon-1.png",
